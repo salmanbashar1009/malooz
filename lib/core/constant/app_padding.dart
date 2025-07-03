@@ -7,6 +7,6 @@ class AppPadding {
   static const EdgeInsets paddingH16V8 =
       EdgeInsets.symmetric(horizontal: 16, vertical: 8);
 
-  static EdgeInsets padding(double horizontal, double vertical) =>
+  static EdgeInsets padding({required double horizontal, required double vertical}) =>
       EdgeInsets.symmetric(horizontal: horizontal, vertical: vertical);
 }

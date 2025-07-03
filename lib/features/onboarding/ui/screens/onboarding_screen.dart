@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constant/app_images.dart';
 import '../../../../core/utls/utls.dart';
 import '../widgets/blur_container.dart';
+import '../widgets/gradient_section.dart';
 import '../widgets/header_section.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -22,19 +23,7 @@ class OnboardingScreen extends StatelessWidget {
         ),
 
         /// Gradient container
-        Container(
-          height: double.infinity,
-          width: double.infinity, ,
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                Colors.black.withAlpha(200),
-                Colors.black.withAlpha(100),
-                Colors.black.withAlpha(200),
-              ])),
-        ),
+        GradientSection(),
 
         /// Header section
         HeaderSection(),
@@ -53,3 +42,4 @@ class OnboardingScreen extends StatelessWidget {
     );
   }
 }
+

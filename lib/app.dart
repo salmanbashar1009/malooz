@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malooz/core/theme/app_theme.dart';
-import 'features/onboarding/ui/screens/onboarding_screen.dart';
+import 'core/route_config/app_routes.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       title: 'Malooz',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
-      home: OnboardingScreen(),
+      initialRoute: '/onboardingScreen',
+      routes: AppRoutes.routes,
     );
   }
 }

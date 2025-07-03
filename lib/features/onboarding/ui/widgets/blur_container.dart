@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:malooz/core/constant/app_padding.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/utls/utls.dart';
 
@@ -17,7 +18,7 @@ class BlurContainer extends StatelessWidget {
       right: 0,
       bottom: 30,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: AppPadding.padding(horizontal: 16, vertical: 20),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(20),
           child: BackdropFilter(
@@ -57,14 +58,19 @@ class BlurContainer extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                   Utils.primaryButton(title: "Login", onPressed: (){}),
+                    Utils.primaryButton(
+                        title: "Login",
+                        onPressed: () {
+                          Navigator.pushReplacementNamed(
+                              context, '/loginScreen');
+                        }),
                     const SizedBox(
                       height: 16,
                     ),
                     Text("New here?",
                         style: textTheme.bodyMedium?.copyWith(
-                            color: AppColors.white.withAlpha(225),
-                            fontWeight: FontWeight.w400))
+                          color: AppColors.white.withAlpha(200),
+                        ))
                   ],
                 )),
           ),

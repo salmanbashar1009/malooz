@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malooz/core/constant/app_padding.dart';
 
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_icons.dart';
@@ -21,8 +22,7 @@ class HeaderSection extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              padding: AppPadding.paddingH16V8,
               decoration: BoxDecoration(
                   color: AppColors.white10,
                   borderRadius: BorderRadius.circular(99)),

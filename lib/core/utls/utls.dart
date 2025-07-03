@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constant/app_colors.dart';
+import '../constant/app_padding.dart';
 
-class Utils{
+class Utils {
   /// app logo
-  static Widget AppLogo({ double? width,  double? height}){
+  static Widget AppLogo({double? width, double? height}) {
     return Image.asset(
       "assets/images/onboarding/logo.png",
       width: width ?? 250,
@@ -11,9 +13,13 @@ class Utils{
     );
   }
 
-  // app primary button
- static Widget primaryButton({required String title, required VoidCallback onPressed, double? height, double? width}){
-    return  SizedBox(
+  /// app primary button
+  static Widget primaryButton(
+      {required String title,
+      required VoidCallback onPressed,
+      double? height,
+      double? width}) {
+    return SizedBox(
       height: height ?? 48,
       width: width ?? double.infinity,
       child: ElevatedButton(
@@ -24,8 +30,26 @@ class Utils{
                   borderRadius: BorderRadius.circular(78))),
           child: Text(
             title,
-            style: TextStyle(fontWeight: FontWeight.w400,color: AppColors.black),
+            style: GoogleFonts.roboto(
+                fontWeight: FontWeight.w400,
+                color: AppColors.black,
+                fontSize: 16),
           )),
+    );
+  }
+
+  // custom tile
+ static Widget customTile({required Widget child, double? height, double? width}){
+    return Container(
+      height: height,
+      width: width ?? double.infinity,
+      padding: AppPadding.padding(horizontal: 28, vertical: 19),
+      decoration: BoxDecoration(
+          color: AppColors.white5,
+          border: Border.all(color: AppColors.white6),
+          borderRadius: BorderRadius.circular(10)
+      ),
+      child: child,
     );
  }
 }
