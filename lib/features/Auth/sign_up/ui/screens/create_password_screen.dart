@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/Auth/shared_widgets/password_input_field.dart';
 
+import '../../../../../core/route_config/route_names.dart';
 import '../../../../../core/utls/utls.dart';
 import '../widgets/password_requirements.dart';
 
@@ -33,7 +34,9 @@ class CreatePasswordScreen extends StatelessWidget {
             const SizedBox(height: 12,),
             PasswordRequirements(),
             const Spacer(),
-            Utils.primaryButton(title: "Continue", onPressed: () {}),
+            Utils.primaryButton(title: "Continue", onPressed: () {
+              Navigator.pushNamed(context, RouteNames.phoneVerificationScreen);
+            }),
             const SizedBox(height: 80,),
           ],
         ),
