@@ -39,19 +39,20 @@ class Utils {
   }
 
   /// custom tile
-  static Widget customTile(
-      {required Widget child,
-      double? height,
-      double? width,
-      bool? isSelected,
-      double? verticalPadding,
-      double? horizontalPadding,
-      }) {
+  static Widget customTile({
+    required Widget child,
+    double? height,
+    double? width,
+    bool? isSelected,
+    double? verticalPadding,
+    double? horizontalPadding,
+  }) {
     return Container(
       height: height,
       width: width ?? double.infinity,
       alignment: Alignment.center,
-      padding: AppPadding.padding(horizontal: horizontalPadding ?? 16, vertical: verticalPadding ?? 0),
+      padding: AppPadding.padding(
+          horizontal: horizontalPadding ?? 16, vertical: verticalPadding ?? 0),
       decoration: BoxDecoration(
           color: AppColors.white5,
           border: Border.all(
@@ -77,6 +78,14 @@ class Utils {
       decoration:
           BoxDecoration(color: Color(0xFF131517), shape: BoxShape.circle),
       child: child,
+    );
+  }
+
+  /// app back button
+  static Widget backButton({required VoidCallback onTap}) {
+    return GestureDetector(
+      onTap: () {},
+      child: Icon(Icons.arrow_back_ios),
     );
   }
 }

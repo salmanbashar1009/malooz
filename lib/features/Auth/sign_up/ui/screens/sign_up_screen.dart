@@ -57,7 +57,9 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              Utils.primaryButton(title: "Sign up", onPressed: () {}),
+              Utils.primaryButton(title: "Sign up", onPressed: () {
+                Navigator.pushNamed(context, RouteNames.createPasswordScreen);
+              }),
               const SizedBox(
                 height: 65,
               ),

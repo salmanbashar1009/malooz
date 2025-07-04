@@ -4,11 +4,12 @@ import '../../../core/constant/app_colors.dart';
 import '../../../core/utls/utls.dart';
 
 class PasswordInputField extends StatelessWidget {
-  const PasswordInputField({super.key, this.passwordController, this.label, this.icon});
+  const PasswordInputField({super.key, this.passwordController, this.label, this.icon, this.horizontalPadding});
 
   final TextEditingController? passwordController;
   final String? label;
   final Icon? icon;
+  final double? horizontalPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +17,12 @@ class PasswordInputField extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Utils.customTile(
-      horizontalPadding: 0,
+      horizontalPadding: horizontalPadding ?? 0,
         child: TextFormField(
           controller: passwordController,
           cursorColor: AppColors.whiteGrey,
           decoration: InputDecoration(
+            contentPadding: const EdgeInsets.symmetric(horizontal: 0,),
               label: Text(label ?? ''),
               labelStyle: textTheme.bodyMedium,
               prefixIcon: icon,
