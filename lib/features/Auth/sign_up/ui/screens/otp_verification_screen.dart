@@ -3,6 +3,7 @@ import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/Auth/shared_widgets/phone_input_field.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
+import '../../../../../core/route_config/route_names.dart';
 import '../../../../../core/utls/utls.dart';
 import '../widgets/otp_input_field.dart';
 
@@ -47,7 +48,9 @@ class OtpVerificationScreen extends StatelessWidget {
               const SizedBox(height: 24,),
               OtpInputField(),
               const SizedBox(height: 52,),
-              Utils.primaryButton(title: 'Continue', onPressed: (){}),
+              Utils.primaryButton(title: 'Continue', onPressed: (){
+                Navigator.pushNamed(context, RouteNames.interestScreen);
+              }),
               const SizedBox(height: 65,),
               Align(
                   alignment: Alignment.center,
