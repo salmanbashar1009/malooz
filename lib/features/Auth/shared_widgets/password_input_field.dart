@@ -8,7 +8,7 @@ class PasswordInputField extends StatelessWidget {
 
   final TextEditingController? passwordController;
   final String? label;
-  final IconData? icon;
+  final Icon? icon;
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +16,14 @@ class PasswordInputField extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Utils.customTile(
+      horizontalPadding: 0,
         child: TextFormField(
           controller: passwordController,
           cursorColor: AppColors.whiteGrey,
           decoration: InputDecoration(
               label: Text(label ?? ''),
               labelStyle: textTheme.bodyMedium,
-              prefixIcon: Icon(
-                icon,
-                color: AppColors.whiteGrey,
-              ),
+              prefixIcon: icon,
               border: InputBorder.none,
               suffixIcon: Icon(
                 Icons.visibility_off,

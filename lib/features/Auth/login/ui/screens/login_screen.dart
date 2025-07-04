@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 12,
               ),
-              PasswordInputField(label: "Password", icon: Icons.lock),
+              PasswordInputField(label: "Password", icon: Icon(Icons.lock,color: AppColors.grey,)),
               const SizedBox(
                 height: 16,
               ),

@@ -13,10 +13,11 @@ class PhoneInputField extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Utils.customTile(
+      horizontalPadding: 12,
         height: 56,
         child: IntlPhoneField(
           controller: phoneController,
-          flagsButtonMargin: const EdgeInsets.only(top: 10,left: 16),
+          flagsButtonMargin: const EdgeInsets.only(top: 10,left: 0),
           keyboardType: TextInputType.phone,
           cursorColor: AppColors.whiteGrey,
           dropdownIconPosition: IconPosition.trailing,

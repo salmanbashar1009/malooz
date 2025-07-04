@@ -39,34 +39,44 @@ class Utils {
   }
 
   /// custom tile
- static Widget customTile({required Widget child, double? height, double? width, bool? isSelected}){
+  static Widget customTile(
+      {required Widget child,
+      double? height,
+      double? width,
+      bool? isSelected,
+      double? verticalPadding,
+      double? horizontalPadding,
+      }) {
     return Container(
       height: height,
       width: width ?? double.infinity,
       alignment: Alignment.center,
-      // padding: AppPadding.padding(horizontal: 28, vertical: 19),
+      padding: AppPadding.padding(horizontal: horizontalPadding ?? 16, vertical: verticalPadding ?? 0),
       decoration: BoxDecoration(
           color: AppColors.white5,
-          border: Border.all(color: isSelected == true ? AppColors.primaryColor : AppColors.white6),
-          borderRadius: BorderRadius.circular(10)
-      ),
-      child: child,
-    );
- }
-
- /// custom circle
-  static Widget customCircle({required Widget child, double? width, double? height, EdgeInsets? padding}){
-    return Container(
-      height:height,
-      width: width ,
-      padding:  padding,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          color: Color(0xFF131517),
-          shape: BoxShape.circle
-      ),
+          border: Border.all(
+              color: isSelected == true
+                  ? AppColors.primaryColor
+                  : AppColors.white6),
+          borderRadius: BorderRadius.circular(10)),
       child: child,
     );
   }
 
+  /// custom circle
+  static Widget customCircle(
+      {required Widget child,
+      double? width,
+      double? height,
+      EdgeInsets? padding}) {
+    return Container(
+      height: height,
+      width: width,
+      padding: padding,
+      alignment: Alignment.center,
+      decoration:
+          BoxDecoration(color: Color(0xFF131517), shape: BoxShape.circle),
+      child: child,
+    );
+  }
 }
