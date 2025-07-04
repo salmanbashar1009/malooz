@@ -15,6 +15,7 @@ class CreatePasswordScreen extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         leading: Utils.backButton(onTap: () {}),
       ),
@@ -37,7 +38,7 @@ class CreatePasswordScreen extends StatelessWidget {
             Utils.primaryButton(title: "Continue", onPressed: () {
               Navigator.pushNamed(context, RouteNames.phoneVerificationScreen);
             }),
-            const SizedBox(height: 80,),
+            const SizedBox(height: 120,),
           ],
         ),
       )),

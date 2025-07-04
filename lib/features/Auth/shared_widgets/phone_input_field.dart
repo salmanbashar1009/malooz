@@ -12,26 +12,36 @@ class PhoneInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return Utils.customTile(
-      horizontalPadding: 12,
-        height: 56,
-        child: IntlPhoneField(
-          controller: phoneController,
-          flagsButtonMargin: const EdgeInsets.only(top: 10,left: 0),
-          keyboardType: TextInputType.phone,
-          cursorColor: AppColors.whiteGrey,
-          dropdownIconPosition: IconPosition.trailing,
-          textAlignVertical: TextAlignVertical.center,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: "Enter Phone",
-            hintStyle: textTheme.bodyMedium,
-            contentPadding: const EdgeInsets.only(top: 18),
+    return IntlPhoneField(
+      controller: phoneController,
+      flagsButtonMargin: const EdgeInsets.only(left: 10,),
+      keyboardType: TextInputType.phone,
+      cursorColor: AppColors.whiteGrey,
+      dropdownIconPosition: IconPosition.trailing,
+      textAlignVertical: TextAlignVertical.center,
+      decoration: InputDecoration(
+        filled: true,
+        fillColor: AppColors.white5,
+        hintText: "Enter Phone",
+        hintStyle: textTheme.bodyMedium,
+        contentPadding: const EdgeInsets.only(top: 18),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: AppColors.primaryColor
           ),
-          initialCountryCode: 'BD',
-          onChanged: (phone) {
-            print(phone.completeNumber);
-          },
-        ));
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+              color: AppColors.white6
+          ),
+        ),
+      ),
+      initialCountryCode: 'BD',
+      onChanged: (phone) {
+        print(phone.completeNumber);
+      },
+    );
   }
 }

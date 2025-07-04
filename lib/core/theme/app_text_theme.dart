@@ -46,7 +46,7 @@ class AppTextTheme {
     ),
     bodySmall: GoogleFonts.urbanist(
       fontSize: 12,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
       color: AppColors.white40,
     ),
   );

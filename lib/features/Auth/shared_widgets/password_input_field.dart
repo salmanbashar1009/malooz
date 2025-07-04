@@ -16,22 +16,31 @@ class PasswordInputField extends StatelessWidget {
 
     final textTheme = Theme.of(context).textTheme;
 
-    return Utils.customTile(
-      horizontalPadding: horizontalPadding ?? 0,
-        child: TextFormField(
-          controller: passwordController,
-          cursorColor: AppColors.whiteGrey,
-          decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 0,),
-              label: Text(label ?? ''),
-              labelStyle: textTheme.bodyMedium,
-              prefixIcon: icon,
-              border: InputBorder.none,
-              suffixIcon: Icon(
-                Icons.visibility_off,
-                color: AppColors.whiteGrey,
-                size: 18,
-              )),
-        ));
+    return TextFormField(
+      controller: passwordController,
+      cursorColor: AppColors.whiteGrey,
+      decoration: InputDecoration(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 0,),
+          label: Text(label ?? ''),
+          labelStyle: textTheme.bodyMedium,
+          prefixIcon: icon,
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+                color: AppColors.primaryColor
+            ),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(10),
+            borderSide: BorderSide(
+                color: AppColors.white6
+            ),
+          ),
+          suffixIcon: Icon(
+            Icons.visibility_off,
+            color: AppColors.whiteGrey,
+            size: 18,
+          )),
+    );
   }
 }
