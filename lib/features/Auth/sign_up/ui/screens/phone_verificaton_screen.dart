@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:malooz/core/constant/app_padding.dart';
+import 'package:malooz/core/route_config/route_names.dart';
 import 'package:malooz/features/Auth/shared_widgets/phone_input_field.dart';
 
 import '../../../../../core/constant/app_colors.dart';
@@ -31,7 +32,9 @@ class PhoneVerificatonScreen extends StatelessWidget {
             const SizedBox(height: 24,),
             PhoneInputField(),
             const Spacer(),
-            Utils.primaryButton(title: 'Continue', onPressed: (){}),
+            Utils.primaryButton(title: 'Continue', onPressed: (){
+              Navigator.pushNamed(context, RouteNames.otpVerificationScreen);
+            }),
             const SizedBox(height: 120,)
 
           ],

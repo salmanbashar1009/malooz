@@ -84,7 +84,7 @@ class Utils {
   /// app back button
   static Widget backButton({required VoidCallback onTap}) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap ,
       child: Icon(Icons.arrow_back_ios),
     );
   }
