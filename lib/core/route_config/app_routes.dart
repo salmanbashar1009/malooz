@@ -7,10 +7,12 @@ import 'package:malooz/features/Auth/sign_up/ui/screens/sign_up_screen.dart';
 import '../../features/Auth/interest_screen/ui/screens/interest_screen.dart';
 import '../../features/Auth/login/ui/screens/login_screen.dart';
 import '../../features/onboarding/ui/screens/onboarding_screen.dart';
+import '../../features/parent/ui/screens/parent_screen.dart';
 
 class AppRoutes{
  static Map<String, WidgetBuilder> routes = {
    RouteNames.onboardingScreen: (context) => const OnboardingScreen(),
+   RouteNames.parentScreen: (context) => const ParentScreen(),
    RouteNames.loginScreen: (context) => const LoginScreen(),
    RouteNames.signUpScreen: (context) => const SignUpScreen(),
    RouteNames.createPasswordScreen: (context) => const CreatePasswordScreen(),

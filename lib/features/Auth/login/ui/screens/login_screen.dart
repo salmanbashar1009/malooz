@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                 height: 50,
               ),
               Utils.primaryButton(title: "Login", onPressed: () {
-                Navigator.pushNamed(context, RouteNames.signUpScreen);
+                Navigator.pushReplacementNamed(context, RouteNames.parentScreen);
               }),
               const SizedBox(
                 height: 65,
