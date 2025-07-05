@@ -16,6 +16,6 @@ class AppRoutes{
    RouteNames.createPasswordScreen: (context) => const CreatePasswordScreen(),
    RouteNames.phoneVerificationScreen: (context) => const PhoneVerificatonScreen(),
    RouteNames.otpVerificationScreen: (context) => const OtpVerificationScreen(),
-   RouteNames.interestScreen: (context) => const InterestScreen(),
+   RouteNames.interestScreen: (context) =>  InterestScreen(),
  };
 }

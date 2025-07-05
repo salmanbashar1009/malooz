@@ -17,6 +17,7 @@ class Utils {
   static Widget primaryButton(
       {required String title,
       required VoidCallback onPressed,
+        Color? backgroundColor,
       double? height,
       double? width}) {
     return SizedBox(
@@ -25,7 +26,7 @@ class Utils {
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primaryColor,
+              backgroundColor: backgroundColor ??  AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(78))),
           child: Text(

@@ -15,6 +15,7 @@ class AppColors{
   static const Color grey = Color(0xFF717374);
   static const Color whiteGrey = Color(0xFF979797);
   static const Color transparent = Colors.transparent;
+  static const Color buttonColor = Color(0xFFD9D9D9);
 
   /// Colors with opacity
   static const Color white40 = Color.fromRGBO(255, 255, 255, 0.4); /// used for body text
