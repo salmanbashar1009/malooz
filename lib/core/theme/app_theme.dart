@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../constant/app_colors.dart';
 import 'app_text_theme.dart';
+import 'common_style.dart';
 
 class AppTheme {
   static ThemeData dark = ThemeData(
@@ -21,7 +22,7 @@ class AppTheme {
       surfaceTintColor: Colors.transparent,
     ),
     textTheme: AppTextTheme.darkTextTheme,
-    // inputDecorationTheme: AppInputDecorationTheme.dark,
+    inputDecorationTheme: CommonStyle.dark,
   );
 
 }

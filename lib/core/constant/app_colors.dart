@@ -22,6 +22,7 @@ class AppColors{
   static const Color white10 = Color.fromRGBO(246, 246, 246, 0.1); /// used for body text
   static const Color white5 = Color.fromRGBO(246, 246, 246, 0.05); /// used for tile
   static const Color white6 = Color.fromRGBO(246, 246, 246, 0.06); /// used for border
+  static const Color white20 = Color.fromRGBO(246, 246, 246, 0.2);
 
 
 }
