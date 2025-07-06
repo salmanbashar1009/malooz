@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_colors.dart';
+import 'package:malooz/features/details/ui/screen/details_screen.dart';
 import 'package:malooz/features/home/ui/screens/home_screen.dart';
 
 import '../../../../core/constant/app_icons.dart';
@@ -10,7 +11,7 @@ class ParentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      body: SafeArea(child: HomeScreen()),
+      body: DetailsScreen(),
       bottomNavigationBar: Theme(
         data: Theme.of(context).copyWith(
           splashFactory: NoSplash.splashFactory,       // disables splash animations completely

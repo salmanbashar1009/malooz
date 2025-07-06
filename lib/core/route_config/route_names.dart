@@ -7,4 +7,6 @@ class RouteNames{
   static const String phoneVerificationScreen = '/phoneVerificationScreen';
   static const String otpVerificationScreen = '/otpVerificationScreen';
   static const String interestScreen = '/interestScreen';
+  static const String homeScreen = '/homeScreen';
+    static const String detailsScreen = '/detailsScreen';
 }

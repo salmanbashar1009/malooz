@@ -14,7 +14,7 @@ class BuildHorizontalList extends StatelessWidget {
     this.shape,
     this.listHeight,
     this.hasRating = false,
-    this.rating
+    this.rating = 5.0
   });
 
   final String? title;
@@ -68,7 +68,7 @@ class BuildHorizontalList extends StatelessWidget {
                           children: [
                             Icon(Icons.star,color: Colors.amber,size: 14,),
                             const SizedBox(width: 5,),
-                            Text('4.5',style: textTheme.bodySmall?.copyWith(
+                            Text( '$rating',style: textTheme.bodySmall?.copyWith(
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.white
                             ),)
