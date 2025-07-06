@@ -4,4 +4,9 @@ class AppImages{
 
   /// Onboarding images
   static const String onboardingBg = "assets/images/onboarding/bg.png";
+
+  /// home
+  static const String banner = "assets/images/home/banner.png";
+  static const String event = "assets/images/home/events.png";
+  static const String channel = "assets/images/home/channel.png";
 }

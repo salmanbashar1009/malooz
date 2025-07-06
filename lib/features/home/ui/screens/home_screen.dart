@@ -1,49 +1,71 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/constant/app_colors.dart';
+import 'package:malooz/core/constant/app_colors.dart';
+import 'package:malooz/core/constant/app_images.dart';
+import 'package:malooz/features/common_widgets/section_header.dart';
+import '../../../common_widgets/build_horizontal_list.dart';
+import '../widgets/home_screen_banner.dart';
+import '../widgets/home_screen_header.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final textTheme = Theme
+        .of(context)
+        .textTheme;
 
-    final textTheme = Theme.of(context).textTheme;
-
-    return Column(
-      children: [
-        const SizedBox(
-          height: 16,
-        ),
-        AppBar(
-          title: SizedBox(height: 40, child: TextFormField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.only(top: 0),
-              hintText: "Search  by title, actor, competition",
-              hintStyle:  textTheme.bodySmall?.copyWith(color: AppColors.white20),
-              fillColor: AppColors.white10,
-              prefixIcon: const Icon(Icons.search,color: AppColors.white20,size: 18,),
-              focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.white6),
-                 borderRadius: BorderRadius.circular(99)
-              ),
-
-            ),
-          )),
-          centerTitle: true,
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.account_circle,
-                  size: 40,
-                  color: AppColors.grey,
-                ))
-          ],
-        ),
-        const SizedBox(height: 12,)
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const SizedBox(
+            height: 16,
+          ),
+          HomeScreenHeader(textTheme: textTheme),
+          const SizedBox(
+            height: 12,
+          ),
+          HomeScreenBanner(textTheme: textTheme),
+          const SizedBox(height: 12,),
+          SectionHeader(title: "Special Events"),
+          const SizedBox(height: 12,),
+          BuildHorizontalList(
+            title: 'Card Title', itemCount: 10, imagePath: AppImages.event,),
+          const SizedBox(height: 35,),
+          SectionHeader(title: "Sports Channel"),
+          const SizedBox(height: 12,),
+          BuildHorizontalList(
+            listHeight: 80,
+              itemCount: 10,
+              imagePath: AppImages.channel,
+              shape: BoxShape.circle,
+              width: 55,
+              height: 55 ,),
+          const SizedBox(height: 12,),
+          SectionHeader(title: "Movie Channel"),
+          const SizedBox(height: 12,),
+          BuildHorizontalList(
+            listHeight: 80,
+            itemCount: 10,
+            imagePath: AppImages.channel,
+            shape: BoxShape.circle,
+            width: 55,
+            height: 55 ,),
+          const SizedBox(height: 12,),
+          SectionHeader(title: "Entertainment Channel"),
+          const SizedBox(height: 12,),
+          BuildHorizontalList(
+            listHeight: 80,
+            itemCount: 10,
+            imagePath: AppImages.channel,
+            shape: BoxShape.circle,
+            width: 55,
+            height: 55 ,),
+      
+        ],
+      ),
     );
   }
 }
+
+
