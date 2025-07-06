@@ -80,6 +80,7 @@ class HomeScreen extends StatelessWidget {
                 SectionHeader(title: "Movies"),
                 const SizedBox(height: 12,),
                 BuildHorizontalList(
+                  hasRating: true,
                   listHeight: 160,
                   borderRadius: 10,
                   title: 'Card Title', itemCount: 10, imagePath: AppImages.movie,height: 125,width: 100,),
@@ -89,6 +90,7 @@ class HomeScreen extends StatelessWidget {
                 SectionHeader(title: "Series"),
                 const SizedBox(height: 12,),
                 BuildHorizontalList(
+                  hasRating: true,
                   listHeight: 160,
                   borderRadius: 10,
                   title: 'Card Title', itemCount: 10, imagePath: AppImages.movie,height: 125,width: 100,),
@@ -98,6 +100,7 @@ class HomeScreen extends StatelessWidget {
                 SectionHeader(title: "Sports"),
                 const SizedBox(height: 12,),
                 BuildHorizontalList(
+                  hasRating: true,
                   listHeight: 160,
                   borderRadius: 10,
                   title: 'Card Title', itemCount: 10, imagePath: AppImages.movie,height: 125,width: 100,),
@@ -114,6 +117,7 @@ class HomeScreen extends StatelessWidget {
                 SectionHeader(title: "Documents"),
                 const SizedBox(height: 12,),
                 BuildHorizontalList(
+                  hasRating: true,
                   listHeight: 160,
                   borderRadius: 10,
                   title: 'Card Title', itemCount: 10, imagePath: AppImages.movie,height: 125,width: 100,),
