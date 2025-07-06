@@ -30,33 +30,37 @@ class HomeScreenBanner extends StatelessWidget {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  AppColors.gradient5,
-                  AppColors.black,
-                ])),
+              AppColors.gradient5,
+              AppColors.black,
+            ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 10,
           children: [
-            Text("The Best Of Recent Cinema Is Here",style: textTheme.titleSmall?.copyWith(
-                fontWeight: FontWeight.w500,
-                fontSize: 14
-            ),),
-            Text('''All French and international films released immediately after their 
-    All French and international films released immediately after 
-    their theatrical release.''',style: textTheme.bodySmall?.copyWith(
-              fontSize: 10,
-            ),),
+            Text(
+              "The Best Of Recent Cinema Is Here",
+              style: textTheme.titleSmall
+                  ?.copyWith(fontWeight: FontWeight.w500, fontSize: 14),
+            ),
+            Text(
+              '''All French and international films \nreleased immediately after their All French and international \nfilms released immediately after their theatrical release.''',
+              style: textTheme.bodySmall?.copyWith(
+                fontSize: 10,
+              ),
+            ),
             GestureDetector(
-              onTap: (){},
+              onTap: () {},
               child: Container(
                 margin: const EdgeInsets.only(left: 12),
                 padding: AppPadding.padding(horizontal: 12, vertical: 6),
                 decoration: BoxDecoration(
                     color: AppColors.primaryColor,
-                    borderRadius: BorderRadius.circular(2)
+                    borderRadius: BorderRadius.circular(2)),
+                child: Text(
+                  "GET STARTED",
+                  style: textTheme.bodySmall?.copyWith(color: AppColors.black),
                 ),
-                child: Text("GET STARTED",style: textTheme.bodySmall?.copyWith(color: AppColors.black),),
               ),
             )
           ],

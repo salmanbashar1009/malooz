@@ -38,14 +38,14 @@ class BuildHorizontalList extends StatelessWidget {
         itemCount: itemCount,
         itemBuilder: (context, index) {
           return Padding(
-            padding:  EdgeInsets.only(right: index == 9 ? 16 : 4, left: index == 0 ? 16 : 4),
+            padding:  EdgeInsets.only(right: index == 9 ? 16 : 5, left: index == 0 ? 16 : 5),
             child: Column(
               children: [
                 Container(
-                  width: height ?? 110,
-                  height: width ?? 75,
+                  width: width ?? 110,
+                  height: height ?? 75,
                   decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(imagePath)),
+                      image: DecorationImage(image: AssetImage(imagePath),fit: BoxFit.cover),
                       borderRadius: shape != null ? null : BorderRadius.circular(borderRadius ?? 0),
                       shape: shape ?? BoxShape.rectangle
                   ),
