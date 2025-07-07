@@ -59,6 +59,7 @@ class ImageSection extends StatelessWidget {
                       spacing: 10,
                       children: [
                         RatingBar.builder(
+                          ignoreGestures: true,
                           textDirection: TextDirection.ltr,
                           initialRating: 3.5,
                           minRating: 1,
