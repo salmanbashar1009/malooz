@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constant/app_colors.dart';
 import 'app_text_theme.dart';
 import 'common_style.dart';
@@ -20,6 +21,11 @@ class AppTheme {
     appBarTheme: AppBarTheme(
       backgroundColor: Colors.transparent,
       surfaceTintColor: Colors.transparent,
+      titleTextStyle: GoogleFonts.roboto(
+        color: AppColors.white,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      )
     ),
     textTheme: AppTextTheme.darkTextTheme,
     inputDecorationTheme: CommonStyle.dark,

@@ -100,7 +100,6 @@ class DetailsScreen extends StatelessWidget {
           BuildHorizontalList(itemCount: 10, imagePath: AppImages.movie,height: 125,width: 100,listHeight: 160,hasRating: true,),
           const SizedBox(height: 20,),
 
-      
         ],
       ),
     );
