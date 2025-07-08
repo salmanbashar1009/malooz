@@ -15,7 +15,7 @@ class AppSearchBar extends StatelessWidget {
         contentPadding: const EdgeInsets.only(top: 0),
         hintText: "Search  by title, actor, competition",
         hintStyle:  textTheme.bodySmall?.copyWith(color: AppColors.white20),
-        fillColor: AppColors.white10,
+        fillColor: AppColors.white5,
         prefixIcon: const Icon(Icons.search,color: AppColors.white20,size: 18,),
         focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: AppColors.white6),

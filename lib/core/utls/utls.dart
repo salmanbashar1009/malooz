@@ -17,7 +17,7 @@ class Utils {
   static Widget primaryButton(
       {required String title,
       required VoidCallback onPressed,
-        Color? backgroundColor,
+      Color? backgroundColor,
       double? height,
       double? width}) {
     return SizedBox(
@@ -26,7 +26,7 @@ class Utils {
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
-              backgroundColor: backgroundColor ??  AppColors.primaryColor,
+              backgroundColor: backgroundColor ?? AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(78))),
           child: Text(
@@ -85,9 +85,27 @@ class Utils {
   /// app back button
   static Widget backButton({required VoidCallback onTap}) {
     return GestureDetector(
-      onTap: onTap ,
+      onTap: onTap,
       child: Icon(Icons.arrow_back_ios),
     );
   }
 
+  static Widget buildHorizontalList({
+    required int itemCount,
+    required Widget Function(int? index) widget,
+    double? height,
+    double? width,
+  }) {
+    return SizedBox(
+      height: height ?? 120,
+      width: double.infinity,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: itemCount,
+        itemBuilder: (context, index) {
+          return widget(index);
+        },
+      ),
+    );
+  }
 }

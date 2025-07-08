@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 
 import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/route_config/route_names.dart';
 import '../../../../../core/utls/utls.dart';
 
 class InterestScreen extends StatelessWidget {
@@ -79,7 +80,9 @@ class InterestScreen extends StatelessWidget {
                 spacing: 16,
                 children: [
                   Expanded(child: Utils.primaryButton(title: "Skip",backgroundColor: AppColors.buttonColor, onPressed: (){},)),
-                  Expanded(child: Utils.primaryButton(title: "Continue", onPressed: (){})),
+                  Expanded(child: Utils.primaryButton(title: "Continue", onPressed: (){
+                    Navigator.pushNamedAndRemoveUntil(context, RouteNames.parentScreen, (route) => false);
+                  })),
                 ],
               ),
               const SizedBox(height: 35,)

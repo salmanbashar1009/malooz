@@ -14,4 +14,7 @@ class AppImages{
   /// Details screen
   static const String details = "assets/images/details/details.png";
 
+  /// Live screen
+  static const String live = "assets/images/home/live.png";
+
 }

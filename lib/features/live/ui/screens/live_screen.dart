@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:malooz/core/constant/app_images.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/common_widgets/app_search_bar.dart';
-import 'package:malooz/features/common_widgets/build_horizontal_list.dart';
 import 'package:malooz/features/common_widgets/section_header.dart';
-
+import 'package:malooz/features/live/ui/widgets/video_card.dart';
 import '../../../../core/utls/utls.dart';
+import '../widgets/live_video_card.dart';
 
 class LiveScreen extends StatelessWidget {
-  const LiveScreen({super.key});
+   const LiveScreen({super.key,});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,17 +18,36 @@ class LiveScreen extends StatelessWidget {
         leading: Utils.backButton(onTap: (){}),
         title: const Text("Live Premier league"),
       ),
-      body: Padding(
-        padding: AppPadding.horizontal16,
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            AppSearchBar(),
+            Padding(
+              padding: AppPadding.horizontal16,
+              child: AppSearchBar(),
+            ),
             const SizedBox(height: 27,),
-            SectionHeader(title: "Live Now",seeMore: true,),
+            Padding(
+              padding: AppPadding.horizontal16,
+              child: SectionHeader(title: "Live Now",seeMore: true,),
+            ),
+            const SizedBox(height: 22,),
+            Utils.buildHorizontalList(itemCount: 10, widget:(index) => LiveVideoCard(index: index,),height: 230),
             const SizedBox(height: 28,),
-            SectionHeader(title: "Highlights",),
+            Padding(
+              padding: AppPadding.horizontal16,
+              child: SectionHeader(title: "Highlights",),
+            ),
             const SizedBox(height: 17,),
-
+            Utils.buildHorizontalList(itemCount: 10, widget:(index) => VideoCard(),height: 135),
+            const SizedBox(height: 17,),
+            Padding(
+              padding: AppPadding.horizontal16,
+              child: SectionHeader(title: "Replays",),
+            ),
+            const SizedBox(height: 17,),
+            Utils.buildHorizontalList(itemCount: 10, widget:(index) => VideoCard(),height: 135),
+            const SizedBox(height: 28,),
+        
           ],
         ),
       ),

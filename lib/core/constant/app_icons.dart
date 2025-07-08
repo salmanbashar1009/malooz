@@ -13,4 +13,8 @@ class AppIcons{
   static const String live = 'assets/icons/parent/live.png';
   static const String notification = 'assets/icons/parent/notification.png';
   static const String settings = 'assets/icons/parent/settings.png';
+
+  /// live
+  static const String liveIndicator = 'assets/icons/parent/live-indicator.png';
+
 }

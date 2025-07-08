@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 import '../../core/constant/app_colors.dart';
@@ -58,21 +60,27 @@ class BuildHorizontalList extends StatelessWidget {
                   hasRating == true ?  Positioned(
                       top: 4,
                       left: 4,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6,vertical: 2),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(99),
-                          color: AppColors.white6.withAlpha(50),
-                        ),
-                        child: Wrap(
-                          children: [
-                            Icon(Icons.star,color: Colors.amber,size: 14,),
-                            const SizedBox(width: 5,),
-                            Text( '$rating',style: textTheme.bodySmall?.copyWith(
-                                fontWeight: FontWeight.w500,
-                                color: AppColors.white
-                            ),)
-                          ],
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: BackdropFilter(
+                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 6,vertical: 2),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(30),
+                              color: AppColors.white6.withAlpha(50),
+                            ),
+                            child: Wrap(
+                              children: [
+                                Icon(Icons.star,color: Colors.amber,size: 14,),
+                                const SizedBox(width: 5,),
+                                Text( '$rating',style: textTheme.bodySmall?.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.white
+                                ),)
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ) : SizedBox.shrink()

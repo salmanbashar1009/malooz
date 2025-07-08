@@ -11,8 +11,10 @@ class AppColors{
 
   ///other
   static const Color white = Color(0xFFFFFFFF);
+  static const Color red = Color(0xFFFD0511);
   static const Color black = Color(0xFF000000);
   static const Color grey = Color(0xFF717374);
+  static const Color midGrey = Color(0xFFCACACB);
   static const Color whiteGrey = Color(0xFF979797);
   static const Color transparent = Colors.transparent;
   static const Color buttonColor = Color(0xFFD9D9D9);
@@ -24,6 +26,7 @@ class AppColors{
   static const Color white5 = Color.fromRGBO(246, 246, 246, 0.05); /// used for tile
   static const Color white6 = Color.fromRGBO(246, 246, 246, 0.06); /// used for border
   static const Color white20 = Color.fromRGBO(246, 246, 246, 0.2);
+  static const Color white2 = Color.fromRGBO(246, 246, 246, 0.02);
   static const Color gradient5 = Color.fromRGBO(102, 102, 102, 0.05);
 
 

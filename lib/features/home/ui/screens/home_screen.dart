@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           height: 16,
         ),
         /// Home screen header section : search bar and profile icon
-        HomeScreenHeader(textTheme: textTheme),
+        HomeScreenHeader(),
         const SizedBox(height: 12,),
         Expanded(
           child: SingleChildScrollView(
