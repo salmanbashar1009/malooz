@@ -27,5 +27,15 @@ class AppIcons{
   static const String subscription = 'assets/icons/settings/subscription.png';
   static const String themeMode = 'assets/icons/settings/subscription.png';
 
+  /// my account screen
+  static const String download = 'assets/icons/settings/download.png';
+  static const String history = 'assets/icons/settings/history.png';
+  static const String language = 'assets/icons/settings/language.png';
+  static const String privacy = 'assets/icons/settings/privacy.png';
+  static const String contact = 'assets/icons/settings/contact.png';
+  static const String security = 'assets/icons/settings/security.png';
+  static const String faq = 'assets/icons/settings/faq.png';
+  static const String logout = 'assets/icons/settings/logout.png';
+
 
 }
