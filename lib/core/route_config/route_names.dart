@@ -9,4 +9,6 @@ class RouteNames{
   static const String interestScreen = '/interestScreen';
   static const String homeScreen = '/homeScreen';
     static const String detailsScreen = '/detailsScreen';
+    static const String settingsScreen = '/settingsScreen';
+    static const String myAccountScreen = '/myAccountScreen';
 }

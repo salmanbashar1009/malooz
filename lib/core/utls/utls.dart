@@ -108,4 +108,29 @@ class Utils {
       ),
     );
   }
+
+  static  Widget buildTileItem(
+      {required BuildContext context,
+        required String iconPath,
+        required String title,
+        Icon? icon,
+        required VoidCallback onTap}) {
+    return ListTile(
+      leading: Image.asset(iconPath, width: 20, height: 20),
+      title: Text(
+        title,
+        style: Theme.of(context)
+            .textTheme
+            .bodySmall
+            ?.copyWith(color: AppColors.white),
+      ),
+      trailing: icon ??
+          const Icon(
+            Icons.chevron_right,
+            color: AppColors.white,
+            size: 20,
+          ),
+      onTap: onTap,
+    );
+  }
 }

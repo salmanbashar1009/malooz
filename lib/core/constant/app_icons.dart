@@ -17,4 +17,15 @@ class AppIcons{
   /// live
   static const String liveIndicator = 'assets/icons/parent/live-indicator.png';
 
+  /// Settings
+  static const String affiliateProgram = 'assets/icons/settings/affiliate_program.png';
+  static const String notifications = 'assets/icons/settings/notifications.png';
+  static const String payment = 'assets/icons/settings/payment.png';
+  static const String person = 'assets/icons/settings/person.png';
+  static const String share = 'assets/icons/settings/share.png';
+  static const String star = 'assets/icons/settings/star.png';
+  static const String subscription = 'assets/icons/settings/subscription.png';
+  static const String themeMode = 'assets/icons/settings/subscription.png';
+
+
 }

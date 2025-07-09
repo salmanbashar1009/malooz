@@ -21,6 +21,8 @@ class AppColors{
   static const Color blue = Color(0xFF052EFD); /// text button color
 
   /// Colors with opacity
+  static const Color white80 = Color.fromRGBO(255, 255, 255, 0.8); /// used for body text
+  static const Color white50 = Color.fromRGBO(255, 255, 255, 0.5); /// used for body text
   static const Color white40 = Color.fromRGBO(255, 255, 255, 0.4); /// used for body text
   static const Color white10 = Color.fromRGBO(246, 246, 246, 0.1); /// used for body text
   static const Color white5 = Color.fromRGBO(246, 246, 246, 0.05); /// used for tile

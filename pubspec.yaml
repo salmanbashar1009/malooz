@@ -67,10 +67,12 @@ flutter:
   assets:
     - assets/images/onboarding/
     - assets/images/home/
+    - assets/images/my_account/
     - assets/images/details/
     - assets/icons/onboarding/
     - assets/icons/parent/
     - assets/icons/login/
+    - assets/icons/settings/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

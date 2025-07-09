@@ -17,4 +17,7 @@ class AppImages{
   /// Live screen
   static const String live = "assets/images/home/live.png";
 
+  /// my account screen
+  static const String premium = "assets/images/my_account/premium.png";
+
 }
