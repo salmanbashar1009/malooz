@@ -18,6 +18,8 @@ class Utils {
       {required String title,
       required VoidCallback onPressed,
       Color? backgroundColor,
+      Color? textColor,
+      double? borderRadius,
       double? height,
       double? width}) {
     return SizedBox(
@@ -28,12 +30,12 @@ class Utils {
           style: ElevatedButton.styleFrom(
               backgroundColor: backgroundColor ?? AppColors.primaryColor,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(78))),
+                  borderRadius: BorderRadius.circular(borderRadius ?? 99))),
           child: Text(
             title,
             style: GoogleFonts.roboto(
                 fontWeight: FontWeight.w400,
-                color: AppColors.black,
+                color: textColor ?? AppColors.black,
                 fontSize: 16),
           )),
     );

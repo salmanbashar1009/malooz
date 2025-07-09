@@ -4,6 +4,7 @@ import 'package:malooz/core/constant/app_icons.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/route_config/route_names.dart';
 import 'package:malooz/features/my_account/ui/widgets/get_premium_tile.dart';
+import 'package:malooz/features/my_account/ui/widgets/show_logout_bottom_sheet.dart';
 import '../../../../core/constant/app_colors.dart';
 import '../../../../core/utls/utls.dart';
 import '../widgets/profile_avatar.dart';
@@ -94,10 +95,15 @@ class MyAccountScreen extends StatelessWidget {
                       width: 18,
                       height: 18,
                     ),
-                    Text(
-                      "Logout",
-                      style:
-                          textTheme.bodySmall?.copyWith(color: AppColors.red),
+                    GestureDetector(
+                      onTap: () {
+                        showLogoutBottomSheet(context);
+                      },
+                      child: Text(
+                        "Logout",
+                        style:
+                            textTheme.bodySmall?.copyWith(color: AppColors.red),
+                      ),
                     )
                   ],
                 ),

@@ -18,6 +18,7 @@ class AppColors{
   static const Color whiteGrey = Color(0xFF979797);
   static const Color transparent = Colors.transparent;
   static const Color buttonColor = Color(0xFFD9D9D9);
+  static const Color bottomSheetColor = Color(0xFF272828);
   static const Color blue = Color(0xFF052EFD); /// text button color
 
   /// Colors with opacity
