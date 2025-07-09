@@ -6,6 +6,7 @@ import 'package:malooz/features/Auth/sign_up/ui/screens/phone_verificaton_screen
 import 'package:malooz/features/Auth/sign_up/ui/screens/sign_up_screen.dart';
 import 'package:malooz/features/details/ui/screen/details_screen.dart';
 import 'package:malooz/features/home/ui/screens/home_screen.dart';
+import 'package:malooz/features/my_account/ui/screens/edit_account_screen.dart';
 import 'package:malooz/features/my_account/ui/screens/my_account_screen.dart';
 import '../../features/Auth/interest_screen/ui/screens/interest_screen.dart';
 import '../../features/Auth/login/ui/screens/login_screen.dart';
@@ -27,5 +28,6 @@ class AppRoutes{
    RouteNames.detailsScreen: (context) => const DetailsScreen(),
    RouteNames.settingsScreen: (context) => const SettingsScreen(),
    RouteNames.myAccountScreen: (context) => const MyAccountScreen(),
+   RouteNames.editAccountScreen: (context) => const EditAccountScreen(),
  };
 }

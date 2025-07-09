@@ -11,4 +11,5 @@ class RouteNames{
     static const String detailsScreen = '/detailsScreen';
     static const String settingsScreen = '/settingsScreen';
     static const String myAccountScreen = '/myAccountScreen';
+    static const String editAccountScreen = '/editAccountScreen';
 }
