@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_colors.dart';
 
+import '../../../../core/route_config/route_names.dart';
 import '../../../../core/utls/utls.dart';
 
 void showLogoutBottomSheet(BuildContext context) {
@@ -50,7 +51,9 @@ void showLogoutBottomSheet(BuildContext context) {
                 children: [
                   Utils.primaryButton(
                       title: 'Cancel',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       borderRadius: 3,
                       backgroundColor: Color(0xFFFFEDF0),
                       width: 110),
@@ -60,7 +63,9 @@ void showLogoutBottomSheet(BuildContext context) {
                   Utils.primaryButton(
                       title: 'Logout',
                       textColor: AppColors.white,
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(context, RouteNames.loginScreen, (context)=>false);
+                      },
                       width: 110,
                       backgroundColor: AppColors.red,
                       borderRadius: 3),

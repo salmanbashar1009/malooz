@@ -39,7 +39,9 @@ class SettingsScreen extends StatelessWidget {
               context: context,
               iconPath: AppIcons.notifications,
               title: 'Notifications',
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, RouteNames.notificationsScreen);
+              }),
           Utils.buildTileItem(
               context: context,
               iconPath: AppIcons.themeMode,
@@ -84,6 +86,4 @@ class SettingsScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }

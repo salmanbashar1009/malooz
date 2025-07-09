@@ -23,7 +23,7 @@ class AppTheme {
       surfaceTintColor: Colors.transparent,
       titleTextStyle: GoogleFonts.roboto(
         color: AppColors.white,
-        fontSize: 16,
+        fontSize: 20,
         fontWeight: FontWeight.w600,
       )
     ),

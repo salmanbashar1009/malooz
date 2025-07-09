@@ -24,7 +24,7 @@ class AppTextTheme {
       fontWeight: FontWeight.w700,
       color: AppColors.white,
     ),
-    titleMedium: GoogleFonts.roboto(
+    titleMedium: GoogleFonts.urbanist(
       fontSize: 20,
       fontWeight: FontWeight.w700,
       color: AppColors.white,
