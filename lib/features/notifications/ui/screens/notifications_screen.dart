@@ -11,27 +11,16 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      appBar: AppBar(
-        leading: Utils.backButton(onTap: () {
-          Navigator.pop(context);
-        }),
-        title: Text(
-          'Notifications',
-          style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
-        ),
-        centerTitle: true,
-        actionsPadding: const EdgeInsets.only(right: 8),
-        actions: [
-          GestureDetector(
-            onTap: () {},
-            child: Image.asset(
-              AppIcons.notifications,
-              width: 24,
-              height: 24,
-            ),
-          )
-        ],
-      ),
+      appBar: Utils.appBar(context: context,title: "Notifications",actions: [
+        GestureDetector(
+          onTap: (){},
+          child: Image.asset(
+            AppIcons.notifications,
+            width: 24,
+            height: 24,
+          ),
+        )
+      ]),
       body: ListView.builder(
         itemCount: 25,
         itemBuilder: (context, index) {

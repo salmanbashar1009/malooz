@@ -111,6 +111,7 @@ class Utils {
     );
   }
 
+  /// app list tile
   static  Widget buildTileItem(
       {required BuildContext context,
         required String iconPath,
@@ -135,4 +136,21 @@ class Utils {
       onTap: onTap,
     );
   }
+
+  /// app bar
+ static AppBar appBar({required BuildContext context,String? title , List<Widget>? actions,}){
+    final textTheme = Theme.of(context).textTheme;
+    return AppBar(
+      leading: backButton(onTap: () {
+        Navigator.pop(context);
+      }),
+      title: Text(
+        title ?? '',
+        style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
+      ),
+      centerTitle: true,
+      actionsPadding: const EdgeInsets.only(right: 8),
+      actions: actions
+    );
+ }
 }
