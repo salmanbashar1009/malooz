@@ -6,6 +6,7 @@ import 'package:malooz/features/subscription/ui/widgets/montly_subscription.dart
 import 'package:malooz/features/subscription/ui/widgets/premium_intro_section.dart';
 import 'package:malooz/features/subscription/ui/widgets/weeklly_subscription.dart';
 import '../../../../core/constant/app_colors.dart';
+import '../../../../core/route_config/route_names.dart';
 import '../../../../core/utls/utls.dart';
 import '../../bloc/subscription_bloc.dart';
 import '../widgets/daily_subsciption.dart';
@@ -60,7 +61,9 @@ class SubscriptionScreen extends StatelessWidget {
                   const SizedBox(height: 32,),
                   YearlySubscription(),
                   const SizedBox(height: 61,),
-                  Utils.primaryButton(title: 'Continue', onPressed: (){}),
+                  Utils.primaryButton(title: 'Continue', onPressed: (){
+                    Navigator.pushNamed(context, RouteNames.paymentDetailsScreen);
+                  }),
                   const SizedBox(height: 32,),
                 ],
               ),

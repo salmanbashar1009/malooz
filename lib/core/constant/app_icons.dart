@@ -36,6 +36,9 @@ class AppIcons{
   static const String security = 'assets/icons/settings/security.png';
   static const String faq = 'assets/icons/settings/faq.png';
   static const String logout = 'assets/icons/settings/logout.png';
+ /// payment details
+  static const String visa = "assets/icons/payment/visa.png";
+
 
 
 }
