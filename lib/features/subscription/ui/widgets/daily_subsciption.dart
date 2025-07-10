@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../core/constant/app_colors.dart';
+import '../../bloc/subscription_bloc.dart';
 import 'build_subscription_card.dart';
 
 class DailySubscription extends StatelessWidget {
@@ -17,9 +19,16 @@ class DailySubscription extends StatelessWidget {
       fontSize: 14,
       color: AppColors.white,
     );
+
+    final selectedSubscription = context.watch<SubscriptionBloc>().state ;
+
     return BuildSubscriptionCard(
         title: "Daily",
         description: "- Best for daily Entertainment",
+        isSelected: selectedSubscription == "Daily",
+        onTap: (){
+          context.read<SubscriptionBloc>().select("Daily");
+        },
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

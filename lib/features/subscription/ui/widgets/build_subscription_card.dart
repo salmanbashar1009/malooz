@@ -5,12 +5,20 @@ import '../../../../core/constant/app_colors.dart';
 import '../../../../core/constant/app_padding.dart';
 
 class BuildSubscriptionCard extends StatelessWidget {
-  const BuildSubscriptionCard({super.key, required this.title, required this.description, this.onTap, this.children});
+  const BuildSubscriptionCard({
+    super.key,
+    required this.title,
+    required this.description,
+    this.onTap,
+    this.children,
+    required this.isSelected,
+  });
 
   final String title;
   final String description;
   final VoidCallback? onTap;
   final List<Widget>? children;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
@@ -19,15 +27,15 @@ class BuildSubscriptionCard extends StatelessWidget {
       fontSize: 14,
       color: AppColors.white,
     );
-    return Column(
-      children: [
-        GestureDetector(
-          onTap: onTap,
-          child: Container(
+    return GestureDetector(
+      onTap: onTap,
+      child: Column(
+        children: [
+          Container(
             padding: AppPadding.padding(horizontal: 12, vertical: 12),
             decoration: BoxDecoration(
-              color: Color(0xFF282A2C),
-              borderRadius: BorderRadius.only(
+              color: isSelected ? AppColors.primaryColor : const Color(0xFF282A2C),
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(10),
                 topRight: Radius.circular(10),
               ),
@@ -37,42 +45,46 @@ class BuildSubscriptionCard extends StatelessWidget {
               children: [
                 RichText(
                   text: TextSpan(
-                      style: textTheme.copyWith(
-                        fontWeight: FontWeight.w700,
+                    style: textTheme.copyWith(
+                      fontWeight: FontWeight.w700,
+                      color: isSelected ? AppColors.black : null,
+                    ),
+                    children: [
+                      TextSpan(text: title),
+                      TextSpan(
+                        text: description,
+                        style: textTheme.copyWith(
+                          fontWeight: FontWeight.w500,
+                          color:  isSelected ? AppColors.black : null,
+                        ),
                       ),
-                      children: <TextSpan>[
-                        TextSpan(
-                            text: title
-                        ),
-                        TextSpan(
-                          text: description,
-                          style: textTheme.copyWith(
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ]
+                    ],
                   ),
                 ),
-                Icon(Icons.circle,size: 18,color: AppColors.white18,)
+                Icon(
+                  isSelected ? Icons.check_circle : Icons.circle,
+                  size: 18,
+                  color: isSelected ? AppColors.black : Colors.white,
+                ),
               ],
             ),
           ),
-        ),
-        Container(
-          padding: AppPadding.padding(horizontal: 12, vertical: 12),
-          decoration: BoxDecoration(
-            color: Color(0xFF131517),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(10),
-              bottomRight: Radius.circular(10),
+          Container(
+            padding: AppPadding.padding(horizontal: 12, vertical: 12),
+            decoration: const BoxDecoration(
+              color: Color(0xFF131517),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                bottomRight: Radius.circular(10),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: children!,
             ),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: children!,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
