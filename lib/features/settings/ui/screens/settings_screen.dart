@@ -51,7 +51,9 @@ class SettingsScreen extends StatelessWidget {
               context: context,
               iconPath: AppIcons.subscription,
               title: 'Subscription Management',
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, RouteNames.subscriptionScreen);
+              }),
           Utils.buildTileItem(
               context: context,
               iconPath: AppIcons.payment,

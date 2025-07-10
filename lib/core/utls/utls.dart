@@ -138,10 +138,10 @@ class Utils {
   }
 
   /// app bar
- static AppBar appBar({required BuildContext context,String? title , List<Widget>? actions,}){
+ static AppBar appBar({required BuildContext context,Widget? leading, String? title , List<Widget>? actions,}){
     final textTheme = Theme.of(context).textTheme;
     return AppBar(
-      leading: backButton(onTap: () {
+      leading: leading ?? backButton(onTap: () {
         Navigator.pop(context);
       }),
       title: Text(
