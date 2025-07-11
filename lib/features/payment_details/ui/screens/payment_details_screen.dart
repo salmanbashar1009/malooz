@@ -6,6 +6,8 @@ import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/utls/utls.dart';
 import 'package:malooz/features/payment_details/ui/widgets/select_payment_method.dart';
 
+import '../widgets/subscription_success_alert.dart';
+
 class PaymentDetailsScreen extends StatelessWidget {
   const PaymentDetailsScreen({super.key});
 
@@ -115,7 +117,9 @@ class PaymentDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 40,
               ),
-              Utils.primaryButton(title: "Continue", onPressed: (){}),
+              Utils.primaryButton(title: "Continue", onPressed: () async {
+               await showSubscriptionSuccessAlert(context);
+              }),
               const SizedBox(height: 32,)
         
             ],
