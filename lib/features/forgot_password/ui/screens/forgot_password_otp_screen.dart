@@ -3,10 +3,10 @@ import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import '../../../../../core/route_config/route_names.dart';
 import '../../../../../core/utls/utls.dart';
-import '../widgets/otp_input_field.dart';
+import '../../../Auth/sign_up/ui/widgets/otp_input_field.dart';
 
-class OtpVerificationScreen extends StatelessWidget {
-  const OtpVerificationScreen({super.key});
+class ForgotPasswordOtpScreen extends StatelessWidget {
+  const ForgotPasswordOtpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class OtpVerificationScreen extends StatelessWidget {
               OtpInputField(),
               const SizedBox(height: 52,),
               Utils.primaryButton(title: 'Continue', onPressed: (){
-                Navigator.pushNamed(context, RouteNames.interestScreen);
+                // Navigator.pushNamed(context, RouteNames.interestScreen);
               }),
               const SizedBox(height: 65,),
               Align(

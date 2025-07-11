@@ -138,7 +138,7 @@ class Utils {
   }
 
   /// app bar
- static AppBar appBar({required BuildContext context,Widget? leading, String? title , List<Widget>? actions,}){
+ static AppBar appBar({required BuildContext context,Widget? leading, String? title , List<Widget>? actions,bool? isTitleCenter}){
     final textTheme = Theme.of(context).textTheme;
     return AppBar(
       leading: leading ?? backButton(onTap: () {
@@ -148,7 +148,7 @@ class Utils {
         title ?? '',
         style: textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
       ),
-      centerTitle: true,
+      centerTitle: isTitleCenter ?? true,
       actionsPadding: const EdgeInsets.only(right: 8),
       actions: actions
     );
