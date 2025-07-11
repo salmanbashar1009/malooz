@@ -63,7 +63,9 @@ class MyAccountScreen extends StatelessWidget {
                   context: context,
                   iconPath: AppIcons.privacy,
                   title: "Privacy Policy",
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.termsConditionsScreen);
+                  }),
               Utils.buildTileItem(
                   context: context,
                   iconPath: AppIcons.contact,

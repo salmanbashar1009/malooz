@@ -15,4 +15,5 @@ class RouteNames {
   static const String notificationsScreen = '/notificationsScreen';
   static const String subscriptionScreen = '/subscriptionScreen';
   static const String paymentDetailsScreen = '/paymentDetailsScreen';
+  static const String termsConditionsScreen = '/termsConditionsScreen';
 }
