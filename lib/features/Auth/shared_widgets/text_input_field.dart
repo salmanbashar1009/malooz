@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 
 import '../../../core/constant/app_colors.dart';
-import '../../../core/utls/utls.dart';
 
 class TextInputField extends StatelessWidget {
   const TextInputField({super.key, this.textController, this.label, this.icon});
@@ -26,7 +25,7 @@ class TextInputField extends StatelessWidget {
           label: Text(label ?? ''),
           labelStyle: textTheme.bodyMedium,
           prefixIcon: Icon(
-            icon,
+            icon ,
             color: AppColors.whiteGrey,
           ),
           suffixIcon: Icon(

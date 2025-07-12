@@ -31,7 +31,7 @@ class OtpInputField extends StatelessWidget {
         activeColor: AppColors.primaryColor,
       ),
       animationDuration: Duration(milliseconds: 300),
-      // backgroundColor: AppColors.primaryColor,
+      backgroundColor: Colors.transparent,
       enableActiveFill: true,
       controller: otpController,
       appContext: context,

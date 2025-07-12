@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../core/constant/app_colors.dart';
+import '../../../../../core/route_config/route_names.dart';
 
 class RememberForgetPasswordSection extends StatelessWidget {
   const RememberForgetPasswordSection({
@@ -23,10 +24,15 @@ class RememberForgetPasswordSection extends StatelessWidget {
             style: textTheme.bodySmall?.copyWith(
                 color: AppColors.white, fontWeight: FontWeight.w500)),
         const Spacer(),
-        Text("Forgot Password?",
-            style: textTheme.bodySmall?.copyWith(
-                color: AppColors.primaryColor,
-                fontWeight: FontWeight.w500)),
+        GestureDetector(
+          onTap: (){
+            Navigator.pushNamed(context, RouteNames.forgotPasswordScreen);
+          },
+          child: Text("Forgot Password?",
+              style: textTheme.bodySmall?.copyWith(
+                  color: AppColors.primaryColor,
+                  fontWeight: FontWeight.w500)),
+        ),
       ],
     );
   }

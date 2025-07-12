@@ -12,8 +12,11 @@ import 'package:malooz/features/notifications/ui/screens/notifications_screen.da
 import 'package:malooz/features/payment_details/ui/screens/payment_details_screen.dart';
 import 'package:malooz/features/subscription/ui/screens/subscription_screen.dart';
 import 'package:malooz/features/terms_&_conditions/ui/screens/terms_conditions_screen.dart';
+import '../../features/Auth/forgot_password/ui/screens/forgot_password_otp_screen.dart';
+import '../../features/Auth/forgot_password/ui/screens/forgot_password_screen.dart';
 import '../../features/Auth/interest_screen/ui/screens/interest_screen.dart';
 import '../../features/Auth/login/ui/screens/login_screen.dart';
+import '../../features/Auth/reset_password/ui/screens/reset_password_screen.dart';
 import '../../features/onboarding/ui/screens/onboarding_screen.dart';
 import '../../features/parent/ui/screens/parent_screen.dart';
 import '../../features/settings/ui/screens/settings_screen.dart';
@@ -37,5 +40,8 @@ class AppRoutes{
    RouteNames.subscriptionScreen: (context) => const SubscriptionScreen(),
    RouteNames.paymentDetailsScreen: (context) => const PaymentDetailsScreen(),
    RouteNames.termsConditionsScreen: (context) => const TermsConditionsScreen(),
+   RouteNames.forgotPasswordOtpScreen: (context) => const ForgotPasswordOtpScreen(),
+   RouteNames.forgotPasswordScreen: (context) => const ForgotPasswordScreen(),
+   RouteNames.resetPasswordScreen: (context) => const ResetPasswordScreen(),
  };
 }

@@ -20,6 +20,7 @@ class AppImages{
   /// my account screen
   static const String premium = "assets/images/my_account/premium.png";
 
-  /// payment details
+  /// forgot password
+static const String forgotPassword = "assets/images/forgot_password/forgot-pass.png";
 
 }

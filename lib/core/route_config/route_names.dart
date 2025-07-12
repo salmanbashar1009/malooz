@@ -16,4 +16,7 @@ class RouteNames {
   static const String subscriptionScreen = '/subscriptionScreen';
   static const String paymentDetailsScreen = '/paymentDetailsScreen';
   static const String termsConditionsScreen = '/termsConditionsScreen';
+  static const String forgotPasswordOtpScreen = '/forgotPasswordOtpScreen';
+  static const String forgotPasswordScreen = '/forgotPasswordScreen';
+  static const String resetPasswordScreen = '/resetPasswordScreen';
 }
