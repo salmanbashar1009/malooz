@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/Auth/shared_widgets/password_input_field.dart';
 import '../../../../../core/constant/app_images.dart';
@@ -16,10 +17,12 @@ class ResetPasswordScreen extends StatelessWidget {
       body: Padding(
         padding: AppPadding.horizontal16,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 40,),
-             Image.asset(AppImages.forgotPassword,width: 95,height: 95,),
+             Align(
+                 alignment: Alignment.center,
+                 child: Image.asset(AppImages.forgotPassword,width: 95,height: 95,)),
             const SizedBox(
               height: 58,
             ),
@@ -30,8 +33,31 @@ class ResetPasswordScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            PasswordInputField()
-
+            PasswordInputField(
+              label: "New Password",
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            PasswordInputField(
+              label: "Confirm Password",
+            ),
+            const SizedBox(
+              height: 14,
+            ),
+            Wrap(
+              children: [
+                const Icon(Icons.check_box,color: AppColors.primaryColor,size: 20,),
+                const SizedBox(width: 8,),
+                Text("Remember me",style: textTheme.bodyMedium?.copyWith(
+                  color: AppColors.white,
+                  fontWeight: FontWeight.w500
+                ),)
+              ],
+            ),
+            const Spacer(),
+            Utils.primaryButton(title: "Continue", onPressed: (){}),
+            const SizedBox(height: 75,)
         ]
       ),
       )

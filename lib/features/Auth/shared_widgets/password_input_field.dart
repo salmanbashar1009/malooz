@@ -23,7 +23,7 @@ class PasswordInputField extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 0,),
           label: Text(label ?? ''),
           labelStyle: textTheme.bodyMedium,
-          prefixIcon: icon,
+          prefixIcon: icon ??  Icon(Icons.lock, color: AppColors.whiteGrey, size: 20,),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide(
