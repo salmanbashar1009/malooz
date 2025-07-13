@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:malooz/core/constant/app_colors.dart';
-import 'package:malooz/core/utls/utls.dart';
 
-import '../../../../core/constant/app_padding.dart';
+import '../../core/constant/app_colors.dart';
+import '../../core/constant/app_padding.dart';
+import '../../core/utls/utls.dart';
 
-Future<void> showSubscriptionSuccessAlert(BuildContext context) async {
+Future<void> showSuccessAlertDialogSheet({required BuildContext context,String? message, VoidCallback? onTap}) async {
   return showDialog<void>(
     context: context,
     barrierDismissible: false, // User must tap button to dismiss
@@ -31,23 +30,23 @@ Future<void> showSubscriptionSuccessAlert(BuildContext context) async {
                 ),
               ),
               const SizedBox(height: 27),
-               Text(
+              Text(
                 'Congratulations!',
                 style: textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w700
+                    fontWeight: FontWeight.w700
                 ),
               ),
               const SizedBox(height: 17),
               Text(
-                'You have successfully Subscribed\n1 month premium. Enjoy the benefit!',
+                message ?? '',
                 style: textTheme.bodyMedium?.copyWith(
-                  color: AppColors.white,
-                  fontWeight: FontWeight.w400
+                    color: AppColors.white,
+                    fontWeight: FontWeight.w400
                 ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 50),
-              Utils.primaryButton(title: "Finished", onPressed: (){
+              Utils.primaryButton(title: "Finished", onPressed: onTap ?? (){
                 Navigator.pop(context);
               })
             ],

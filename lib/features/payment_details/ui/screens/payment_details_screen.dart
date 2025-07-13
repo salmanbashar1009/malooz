@@ -4,9 +4,8 @@ import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/constant/app_icons.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/utls/utls.dart';
+import 'package:malooz/features/common_widgets/success_alert_dialog_sheet.dart';
 import 'package:malooz/features/payment_details/ui/widgets/select_payment_method.dart';
-
-import '../widgets/subscription_success_alert.dart';
 
 class PaymentDetailsScreen extends StatelessWidget {
   const PaymentDetailsScreen({super.key});
@@ -37,7 +36,7 @@ class PaymentDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 13,
               ),
-        
+
               /// Card Details Section
               Text(
                 "Card Details:",
@@ -76,8 +75,10 @@ class PaymentDetailsScreen extends StatelessWidget {
                   )
                 ],
               ),
-              const SizedBox(height: 24,),
-        
+              const SizedBox(
+                height: 24,
+              ),
+
               /// Card holder Details Section
               Text(
                 "Card Holder Details:",
@@ -113,15 +114,21 @@ class PaymentDetailsScreen extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              buildTextFormField(hintText: 'If any Note:',maxLine: 3),
+              buildTextFormField(hintText: 'If any Note:', maxLine: 3),
               const SizedBox(
                 height: 40,
               ),
-              Utils.primaryButton(title: "Continue", onPressed: () async {
-               await showSubscriptionSuccessAlert(context);
-              }),
-              const SizedBox(height: 32,)
-        
+              Utils.primaryButton(
+                  title: "Continue",
+                  onPressed: () async {
+                    await showSuccessAlertDialogSheet(
+                        context: context,
+                        message:
+                            'You have successfully Subscribed\n1 month premium. Enjoy the benefit!');
+                  }),
+              const SizedBox(
+                height: 32,
+              )
             ],
           ),
         ),
@@ -132,7 +139,7 @@ class PaymentDetailsScreen extends StatelessWidget {
   TextFormField buildTextFormField(
       {String? hintText,
       TextEditingController? controller,
-        int? maxLine,
+      int? maxLine,
       Widget? suffixIcon}) {
     final textTheme = GoogleFonts.urbanist(
         fontSize: 14, fontWeight: FontWeight.w500, color: Colors.white70);
@@ -144,9 +151,7 @@ class PaymentDetailsScreen extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: textTheme.copyWith(
-          fontWeight: FontWeight.w400,
-          color: AppColors.white60
-        ),
+            fontWeight: FontWeight.w400, color: AppColors.white60),
         suffixIcon: suffixIcon,
         suffixIconConstraints: const BoxConstraints(
           minHeight: 24, // Should be at least the size of your icon

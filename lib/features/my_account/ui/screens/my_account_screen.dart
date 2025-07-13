@@ -70,7 +70,9 @@ class MyAccountScreen extends StatelessWidget {
                   context: context,
                   iconPath: AppIcons.contact,
                   title: "Contact us",
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.contactSupportScreen);
+                  }),
               Utils.buildTileItem(
                   context: context,
                   iconPath: AppIcons.security,

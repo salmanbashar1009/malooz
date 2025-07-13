@@ -4,7 +4,7 @@ import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/Auth/shared_widgets/password_input_field.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/utls/utls.dart';
-
+import '../../../../common_widgets/success_alert_dialog_sheet.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});
@@ -13,16 +13,24 @@ class ResetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      appBar: Utils.appBar(context: context, title: "Create New Password", isTitleCenter: false),
-      body: Padding(
-        padding: AppPadding.horizontal16,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 40,),
-             Align(
-                 alignment: Alignment.center,
-                 child: Image.asset(AppImages.forgotPassword,width: 95,height: 95,)),
+        appBar: Utils.appBar(
+            context: context,
+            title: "Create New Password",
+            isTitleCenter: false),
+        body: Padding(
+          padding: AppPadding.horizontal16,
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            const SizedBox(
+              height: 40,
+            ),
+            Align(
+                alignment: Alignment.center,
+                child: Image.asset(
+                  AppImages.forgotPassword,
+                  width: 95,
+                  height: 95,
+                )),
             const SizedBox(
               height: 58,
             ),
@@ -47,20 +55,34 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             Wrap(
               children: [
-                const Icon(Icons.check_box,color: AppColors.primaryColor,size: 20,),
-                const SizedBox(width: 8,),
-                Text("Remember me",style: textTheme.bodyMedium?.copyWith(
-                  color: AppColors.white,
-                  fontWeight: FontWeight.w500
-                ),)
+                const Icon(
+                  Icons.check_box,
+                  color: AppColors.primaryColor,
+                  size: 20,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                Text(
+                  "Remember me",
+                  style: textTheme.bodyMedium?.copyWith(
+                      color: AppColors.white, fontWeight: FontWeight.w500),
+                )
               ],
             ),
             const Spacer(),
-            Utils.primaryButton(title: "Continue", onPressed: (){}),
-            const SizedBox(height: 75,)
-        ]
-      ),
-      )
-    );
+            Utils.primaryButton(
+                title: "Continue",
+                onPressed: () async {
+                  await showSuccessAlertDialogSheet(
+                      context: context,
+                      message:
+                          "Your account ready to use. You will be redirect to the home page automatically within few secouds.");
+                }),
+            const SizedBox(
+              height: 75,
+            )
+          ]),
+        ));
   }
 }
