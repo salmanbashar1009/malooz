@@ -63,7 +63,9 @@ class SettingsScreen extends StatelessWidget {
               context: context,
               iconPath: AppIcons.star,
               title: 'Rate the App',
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, RouteNames.feedbackScreen);
+              }),
           Utils.buildTileItem(
               context: context,
               iconPath: AppIcons.affiliateProgram,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/utls/utls.dart';
 
@@ -15,6 +16,7 @@ class FeedbackScreen extends StatelessWidget {
         padding: AppPadding.horizontal16,
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 56,
@@ -30,8 +32,30 @@ class FeedbackScreen extends StatelessWidget {
                   label: 'Email',
                   prefixIcon:
                       Icon(Icons.email, size: 20, color: AppColors.white80)),
+              const SizedBox(height: 35,),
+              Text("Share your experience",style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: AppColors.white,
+                fontWeight: FontWeight.w400
+              ),),
+              const SizedBox(height: 6,),
+              RatingBar.builder(
+                initialRating: 3.5,
+                minRating: 1,
+                // itemSize: 25,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.only(right: 8),
+                itemBuilder: (context, _) => Icon(
+                  Icons.star,
+                  color: Colors.amber,
+                ),
+                onRatingUpdate: (rating) {
+                  print(rating);
+                },
+              ),
           
-              const SizedBox(height: 80,),
+              const SizedBox(height: 35,),
               TextFormField(
                 maxLines: 12,
                 decoration: InputDecoration(
