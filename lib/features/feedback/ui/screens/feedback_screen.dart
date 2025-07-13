@@ -71,7 +71,7 @@ class FeedbackScreen extends StatelessWidget {
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide(color:AppColors.white),
+                    borderSide: BorderSide(color:AppColors.white,width: 0.5),
                   )
                 ),
               ),

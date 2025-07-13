@@ -82,7 +82,9 @@ class MyAccountScreen extends StatelessWidget {
                   context: context,
                   iconPath: AppIcons.faq,
                   title: "FAQ",
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.faqScreen);
+                  }),
               const SizedBox(
                 height: 50,
               ),

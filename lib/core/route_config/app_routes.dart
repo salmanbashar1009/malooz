@@ -6,6 +6,7 @@ import 'package:malooz/features/Auth/sign_up/ui/screens/phone_verificaton_screen
 import 'package:malooz/features/Auth/sign_up/ui/screens/sign_up_screen.dart';
 import 'package:malooz/features/contact_support/ui/screens/contact_support_screen.dart';
 import 'package:malooz/features/details/ui/screen/details_screen.dart';
+import 'package:malooz/features/faq/ui/screens/faq_screen.dart';
 import 'package:malooz/features/feedback/ui/screens/feedback_screen.dart';
 import 'package:malooz/features/home/ui/screens/home_screen.dart';
 import 'package:malooz/features/my_account/ui/screens/edit_account_screen.dart';
@@ -47,5 +48,6 @@ class AppRoutes{
    RouteNames.resetPasswordScreen: (context) => const ResetPasswordScreen(),
    RouteNames.contactSupportScreen: (context) => const ContactSupportScreen(),
    RouteNames.feedbackScreen: (context) => const FeedbackScreen(),
+   RouteNames.faqScreen: (context) =>  FAQScreen(),
  };
 }

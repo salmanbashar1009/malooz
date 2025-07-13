@@ -21,4 +21,5 @@ class RouteNames {
   static const String resetPasswordScreen = '/resetPasswordScreen';
   static const String contactSupportScreen = '/contactSupportScreen';
   static const String feedbackScreen = '/feedbackScreen';
+  static const String faqScreen = '/faqScreen';
 }
