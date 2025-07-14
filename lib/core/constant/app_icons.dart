@@ -39,6 +39,12 @@ class AppIcons{
  /// payment details
   static const String visa = "assets/icons/payment/visa.png";
 
+  /// referral link screen
+  static const String link = "assets/icons/referral/link.png";
+  static const String badge = "assets/icons/referral/badge.png";
+  static const String gitBox = "assets/icons/referral/giftBox.png";
+  static const String referralShare = "assets/icons/referral/referral-share.png";
+
 
 
 }

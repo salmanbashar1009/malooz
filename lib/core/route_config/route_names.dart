@@ -22,4 +22,5 @@ class RouteNames {
   static const String contactSupportScreen = '/contactSupportScreen';
   static const String feedbackScreen = '/feedbackScreen';
   static const String faqScreen = '/faqScreen';
+  static const String referralLinkScreen = '/referralLinkScreen';
 }

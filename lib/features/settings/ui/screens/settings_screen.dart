@@ -70,7 +70,9 @@ class SettingsScreen extends StatelessWidget {
               context: context,
               iconPath: AppIcons.affiliateProgram,
               title: 'Affiliate Program',
-              onTap: () {}),
+              onTap: () {
+                Navigator.pushNamed(context, RouteNames.referralLinkScreen);
+              }),
           Utils.buildTileItem(
               context: context,
               iconPath: AppIcons.share,
