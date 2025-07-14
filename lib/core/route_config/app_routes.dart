@@ -18,6 +18,7 @@ import 'package:malooz/features/payment_details/ui/screens/payment_details_scree
 import 'package:malooz/features/referral_link/ui/screens/referral_link_screen.dart';
 import 'package:malooz/features/subscription/ui/screens/subscription_screen.dart';
 import 'package:malooz/features/terms_&_conditions/ui/screens/terms_conditions_screen.dart';
+import 'package:malooz/features/watch_history/ui/screens/watch_history_screen.dart';
 import '../../features/Auth/forgot_password/ui/screens/forgot_password_otp_screen.dart';
 import '../../features/Auth/forgot_password/ui/screens/forgot_password_screen.dart';
 import '../../features/Auth/interest_screen/ui/screens/interest_screen.dart';
@@ -55,5 +56,6 @@ class AppRoutes{
    RouteNames.referralLinkScreen: (context) => const  ReferralLinkScreen(),
    RouteNames.downloadScreen: (context) => const  DownloadScreen(),
    RouteNames.favouriteListScreen: (context) => const  FavouriteListScreen(),
+   RouteNames.watchHistoryScreen: (context) => const  WatchHistoryScreen(),
  };
 }

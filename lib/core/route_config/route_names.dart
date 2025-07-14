@@ -25,4 +25,5 @@ class RouteNames {
   static const String referralLinkScreen = '/referralLinkScreen';
   static const String downloadScreen = '/downloadScreen';
   static const String favouriteListScreen = '/favouriteListScreen';
+  static const String watchHistoryScreen = '/watchHistoryScreen';
 }

@@ -55,7 +55,9 @@ class MyAccountScreen extends StatelessWidget {
                   context: context,
                   iconPath: AppIcons.history,
                   title: "History",
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.watchHistoryScreen);
+                  }),
               Utils.buildTileItem(
                   context: context,
                   iconPath: AppIcons.language,

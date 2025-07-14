@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Malooz',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
-      initialRoute: RouteNames.favouriteListScreen,
+      initialRoute: RouteNames.onboardingScreen,
       routes: AppRoutes.routes,
     );
   }

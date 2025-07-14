@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/constant/app_colors.dart';
-import '../../../../core/constant/app_padding.dart';
+import '../../core/constant/app_colors.dart';
+import '../../core/constant/app_padding.dart';
 
-class BuildListTile extends StatelessWidget {
-  const BuildListTile({
+class BuildCommonListTile extends StatelessWidget {
+  const BuildCommonListTile({
     super.key,
     required this.leadingImagePath,
     required this.title,

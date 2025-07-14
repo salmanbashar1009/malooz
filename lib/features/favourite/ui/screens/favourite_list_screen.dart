@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/utls/utls.dart';
 
-import '../../../favourite/ui/widgets/build_list_tile.dart';
+import '../../../common_widgets/build_common_list_tile.dart';
 
 class FavouriteListScreen extends StatelessWidget {
   const FavouriteListScreen({super.key});
@@ -22,7 +22,7 @@ class FavouriteListScreen extends StatelessWidget {
                 widget: (index) {
                   return Padding(
                     padding: const EdgeInsets.only(bottom: 8.0),
-                    child: BuildListTile(
+                    child: BuildCommonListTile(
                       leadingImagePath: 'assets/images/home/movie.png',
                       title: 'Match starts in 15 minutes!(link to stream)',
                       trailing: const Icon(
