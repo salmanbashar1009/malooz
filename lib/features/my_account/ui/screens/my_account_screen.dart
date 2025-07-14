@@ -48,7 +48,9 @@ class MyAccountScreen extends StatelessWidget {
                   context: context,
                   iconPath: AppIcons.download,
                   title: "Download",
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.pushNamed(context, RouteNames.downloadScreen);
+                  }),
               Utils.buildTileItem(
                   context: context,
                   iconPath: AppIcons.history,

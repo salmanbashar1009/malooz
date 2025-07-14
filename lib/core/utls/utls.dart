@@ -20,6 +20,7 @@ class Utils {
       Color? backgroundColor,
       Color? textColor,
       double? borderRadius,
+      double? fontSize,
       double? height,
       double? width}) {
     return SizedBox(
@@ -28,6 +29,7 @@ class Utils {
       child: ElevatedButton(
           onPressed: onPressed,
           style: ElevatedButton.styleFrom(
+            padding: AppPadding.padding(horizontal: 8,vertical: 4),
               backgroundColor: backgroundColor ?? AppColors.primaryColor,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(borderRadius ?? 99))),
@@ -36,7 +38,7 @@ class Utils {
             style: GoogleFonts.roboto(
                 fontWeight: FontWeight.w400,
                 color: textColor ?? AppColors.black,
-                fontSize: 16),
+                fontSize:fontSize ?? 16),
           )),
     );
   }
@@ -92,17 +94,18 @@ class Utils {
     );
   }
 
-  static Widget buildHorizontalList({
+  static Widget buildList({
     required int itemCount,
     required Widget Function(int? index) widget,
     double? height,
     double? width,
+    Axis? scrollDirection
   }) {
     return SizedBox(
       height: height ?? 120,
       width: double.infinity,
       child: ListView.builder(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: scrollDirection ??  Axis.horizontal,
         itemCount: itemCount,
         itemBuilder: (context, index) {
           return widget(index);
@@ -138,9 +141,10 @@ class Utils {
   }
 
   /// app bar
- static AppBar appBar({required BuildContext context,Widget? leading, String? title , List<Widget>? actions,bool? isTitleCenter}){
+ static AppBar appBar({required BuildContext context,Widget? leading, String? title , List<Widget>? actions,bool? isTitleCenter, Color? backgroundColor}){
     final textTheme = Theme.of(context).textTheme;
     return AppBar(
+      backgroundColor: backgroundColor ?? Colors.transparent,
       leading: leading ?? backButton(onTap: () {
         Navigator.pop(context);
       }),
