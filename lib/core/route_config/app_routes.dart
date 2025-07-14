@@ -8,6 +8,7 @@ import 'package:malooz/features/contact_support/ui/screens/contact_support_scree
 import 'package:malooz/features/details/ui/screen/details_screen.dart';
 import 'package:malooz/features/download/ui/screens/download_screen.dart';
 import 'package:malooz/features/faq/ui/screens/faq_screen.dart';
+import 'package:malooz/features/favourite/ui/screens/favourite_list_screen.dart';
 import 'package:malooz/features/feedback/ui/screens/feedback_screen.dart';
 import 'package:malooz/features/home/ui/screens/home_screen.dart';
 import 'package:malooz/features/my_account/ui/screens/edit_account_screen.dart';
@@ -53,5 +54,6 @@ class AppRoutes{
    RouteNames.faqScreen: (context) =>  FAQScreen(),
    RouteNames.referralLinkScreen: (context) => const  ReferralLinkScreen(),
    RouteNames.downloadScreen: (context) => const  DownloadScreen(),
+   RouteNames.favouriteListScreen: (context) => const  FavouriteListScreen(),
  };
 }

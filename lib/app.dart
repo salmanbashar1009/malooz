@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:malooz/core/route_config/route_names.dart';
 import 'package:malooz/core/theme/app_theme.dart';
 import 'core/route_config/app_routes.dart';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Malooz',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
-      initialRoute: '/onboardingScreen',
+      initialRoute: RouteNames.favouriteListScreen,
       routes: AppRoutes.routes,
     );
   }
