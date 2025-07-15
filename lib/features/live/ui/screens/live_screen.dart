@@ -3,6 +3,7 @@ import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/common/common_widgets/app_search_bar.dart';
 import 'package:malooz/features/common/common_widgets/section_header.dart';
 import 'package:malooz/features/live/ui/widgets/video_card.dart';
+import '../../../../core/route_config/route_names.dart';
 import '../../../../core/utls/utls.dart';
 import '../widgets/live_video_card.dart';
 
@@ -31,7 +32,9 @@ class LiveScreen extends StatelessWidget {
               child: SectionHeader(title: "Live Now",seeMore: true,),
             ),
             const SizedBox(height: 22,),
-            Utils.buildList(itemCount: 10, widget:(index) => LiveVideoCard(index: index,),height: 230),
+            Utils.buildList(itemCount: 10, widget:(index) => LiveVideoCard(index: index,onTap: (){
+              Navigator.pushNamed(context, RouteNames.livePlayScreen);
+            },),height: 230),
             const SizedBox(height: 28,),
             Padding(
               padding: AppPadding.horizontal16,

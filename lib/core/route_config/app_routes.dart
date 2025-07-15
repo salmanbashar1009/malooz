@@ -11,6 +11,7 @@ import 'package:malooz/features/faq/ui/screens/faq_screen.dart';
 import 'package:malooz/features/favourite/ui/screens/favourite_list_screen.dart';
 import 'package:malooz/features/feedback/ui/screens/feedback_screen.dart';
 import 'package:malooz/features/home/ui/screens/home_screen.dart';
+import 'package:malooz/features/live/ui/screens/live_play_screen.dart';
 import 'package:malooz/features/my_account/ui/screens/edit_account_screen.dart';
 import 'package:malooz/features/my_account/ui/screens/my_account_screen.dart';
 import 'package:malooz/features/notifications/ui/screens/notifications_screen.dart';
@@ -57,5 +58,6 @@ class AppRoutes{
    RouteNames.downloadScreen: (context) => const  DownloadScreen(),
    RouteNames.favouriteListScreen: (context) => const  FavouriteListScreen(),
    RouteNames.watchHistoryScreen: (context) => const  WatchHistoryScreen(),
+   RouteNames.livePlayScreen: (context) => const  LivePlayScreen(),
  };
 }

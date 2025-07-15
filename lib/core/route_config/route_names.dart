@@ -26,4 +26,5 @@ class RouteNames {
   static const String downloadScreen = '/downloadScreen';
   static const String favouriteListScreen = '/favouriteListScreen';
   static const String watchHistoryScreen = '/watchHistoryScreen';
+  static const String livePlayScreen = '/livePlayScreen';
 }
