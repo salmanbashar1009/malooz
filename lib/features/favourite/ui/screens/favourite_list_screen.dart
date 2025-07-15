@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/utls/utls.dart';
 
-import '../../../common_widgets/build_common_list_tile.dart';
+import '../../../common/common_widgets/build_common_list_tile.dart';
 
 class FavouriteListScreen extends StatelessWidget {
   const FavouriteListScreen({super.key});

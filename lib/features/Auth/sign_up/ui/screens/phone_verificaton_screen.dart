@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/route_config/route_names.dart';
 import 'package:malooz/features/Auth/shared_widgets/phone_input_field.dart';
 
-import '../../../../../core/constant/app_colors.dart';
 import '../../../../../core/utls/utls.dart';
 
 class PhoneVerificatonScreen extends StatelessWidget {

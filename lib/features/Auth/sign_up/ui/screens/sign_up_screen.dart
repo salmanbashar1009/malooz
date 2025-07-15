@@ -41,7 +41,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 28,),
-              Utils.AppLogo(width: 180),
+              Utils.appLogo(width: 180),
               const SizedBox(height: 34,),
               Text("Create A New Account", style: textTheme.titleMedium),
               const SizedBox(height: 8,),

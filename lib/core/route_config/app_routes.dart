@@ -38,7 +38,7 @@ class AppRoutes{
    RouteNames.phoneVerificationScreen: (context) => const PhoneVerificatonScreen(),
    RouteNames.otpVerificationScreen: (context) => const OtpVerificationScreen(),
    RouteNames.interestScreen: (context) =>  InterestScreen(),
-   RouteNames.homeScreen: (context) => const HomeScreen(),
+   RouteNames.homeScreen: (context) =>  HomeScreen(),
    RouteNames.detailsScreen: (context) => const DetailsScreen(),
    RouteNames.settingsScreen: (context) => const SettingsScreen(),
    RouteNames.myAccountScreen: (context) => const MyAccountScreen(),

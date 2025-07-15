@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_padding.dart';
-import 'package:malooz/features/common_widgets/app_search_bar.dart';
-import 'package:malooz/features/common_widgets/section_header.dart';
+import 'package:malooz/features/common/common_widgets/app_search_bar.dart';
+import 'package:malooz/features/common/common_widgets/section_header.dart';
 import 'package:malooz/features/live/ui/widgets/video_card.dart';
 import '../../../../core/utls/utls.dart';
 import '../widgets/live_video_card.dart';

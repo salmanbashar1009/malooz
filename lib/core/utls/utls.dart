@@ -5,7 +5,7 @@ import '../constant/app_padding.dart';
 
 class Utils {
   /// app logo
-  static Widget AppLogo({double? width, double? height}) {
+  static Widget appLogo({double? width, double? height}) {
     return Image.asset(
       "assets/images/onboarding/logo.png",
       width: width ?? 250,

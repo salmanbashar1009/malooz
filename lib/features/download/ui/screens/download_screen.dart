@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_colors.dart';
-import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/utls/utls.dart';
 
 import '../widgets/build_list_tile.dart';
@@ -11,7 +10,6 @@ class DownloadScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     return Scaffold(
       appBar: Utils.appBar(
           context: context,

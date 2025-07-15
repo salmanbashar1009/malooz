@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/constant/app_colors.dart';
-import '../../../core/utls/utls.dart';
 
 class PasswordInputField extends StatelessWidget {
   const PasswordInputField({super.key, this.passwordController, this.label, this.icon, this.horizontalPadding});

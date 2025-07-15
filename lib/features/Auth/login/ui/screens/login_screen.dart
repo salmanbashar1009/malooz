@@ -42,7 +42,7 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 28,),
-              Utils.AppLogo(width: 180),
+              Utils.appLogo(width: 180),
               const SizedBox(height: 34,),
               Text("Login", style: textTheme.titleMedium),
               const SizedBox(height: 8,),

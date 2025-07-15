@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../../core/constant/app_colors.dart';
+import '../../../core/constant/app_colors.dart';
 
 class BuildHorizontalList extends StatelessWidget {
   const BuildHorizontalList({

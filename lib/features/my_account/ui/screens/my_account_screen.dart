@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:malooz/core/constant/app_icons.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/route_config/route_names.dart';

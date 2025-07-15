@@ -11,7 +11,7 @@ class ParentBloc extends Cubit<int> {
 
   void changeTab(int index) => emit(index);
 
-  List<Widget> get screens => const [
+  List<Widget> get screens =>  [
      HomeScreen(),
     DetailsScreen(),
     LiveScreen(),

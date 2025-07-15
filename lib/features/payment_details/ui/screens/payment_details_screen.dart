@@ -4,7 +4,7 @@ import 'package:malooz/core/constant/app_colors.dart';
 import 'package:malooz/core/constant/app_icons.dart';
 import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/core/utls/utls.dart';
-import 'package:malooz/features/common_widgets/success_alert_dialog_sheet.dart';
+import 'package:malooz/features/common/common_widgets/success_alert_dialog_sheet.dart';
 import 'package:malooz/features/payment_details/ui/widgets/select_payment_method.dart';
 
 class PaymentDetailsScreen extends StatelessWidget {

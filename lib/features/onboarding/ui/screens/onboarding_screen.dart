@@ -33,7 +33,7 @@ class OnboardingScreen extends StatelessWidget {
           top: MediaQuery.of(context).size.height * 0.36,
           left: 0,
           right: 0,
-          child: Utils.AppLogo()
+          child: Utils.appLogo()
         ),
 
         /// blur container

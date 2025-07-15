@@ -4,7 +4,7 @@ import 'package:malooz/core/constant/app_padding.dart';
 import 'package:malooz/features/Auth/shared_widgets/password_input_field.dart';
 import '../../../../../core/constant/app_images.dart';
 import '../../../../../core/utls/utls.dart';
-import '../../../../common_widgets/success_alert_dialog_sheet.dart';
+import '../../../../common/common_widgets/success_alert_dialog_sheet.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   const ResetPasswordScreen({super.key});

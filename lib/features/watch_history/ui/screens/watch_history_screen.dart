@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:malooz/core/constant/app_images.dart';
 import 'package:malooz/core/constant/app_padding.dart';
-import 'package:malooz/features/common_widgets/app_search_bar.dart';
-import 'package:malooz/features/common_widgets/build_common_list_tile.dart';
+import 'package:malooz/features/common/common_widgets/app_search_bar.dart';
+import 'package:malooz/features/common/common_widgets/build_common_list_tile.dart';
 import '../../../../core/utls/utls.dart';
 
 class WatchHistoryScreen extends StatelessWidget {
@@ -69,7 +69,6 @@ class WatchHistoryScreen extends StatelessWidget {
                         );
                       }),
                     )
-
                   ],
                 ),
               ),
