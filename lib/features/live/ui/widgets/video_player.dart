@@ -1,7 +1,11 @@
 import 'package:better_player_plus/better_player_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../bloc/video_player_bloc/better_video_player_bloc.dart';
+import '../../bloc/video_player_bloc/better_video_player_event.dart';
+import '../../bloc/video_player_bloc/better_video_player_state.dart';
 
-class BetterVideoPlayer extends StatefulWidget {
+class BetterVideoPlayer extends StatelessWidget {
   final String videoUrl;
   final bool isLive;
   final double aspectRatio;
@@ -18,87 +22,41 @@ class BetterVideoPlayer extends StatefulWidget {
   });
 
   @override
-  State<BetterVideoPlayer> createState() => _BetterVideoPlayerState();
-}
-
-class _BetterVideoPlayerState extends State<BetterVideoPlayer> {
-  late BetterPlayerController _controller;
-  bool _isLoading = true;
-  String? _errorMessage;
-
-  @override
-  void initState() {
-    super.initState();
-    _initializePlayer();
-  }
-
-  Future<void> _initializePlayer() async {
-    try {
-      final config = BetterPlayerConfiguration(
-        autoPlay: widget.autoPlay,
-        aspectRatio: widget.aspectRatio,
-        fit: BoxFit.contain,
-        allowedScreenSleep: false,
-        fullScreenByDefault: widget.fullScreenByDefault,
-        controlsConfiguration: BetterPlayerControlsConfiguration(
-          showControlsOnInitialize: false,
-          enableFullscreen: true,
-          enablePlayPause: true,
-          enableProgressBar: !widget.isLive,
-          enableProgressText: !widget.isLive,
-          enableSkips: !widget.isLive,
-          enableMute: true,
-          enableOverflowMenu: true,
-        ),
-        errorBuilder: (context, errorMessage) {
-          return Center(
-            child: Text(
-              errorMessage ?? 'Error loading video',
-              style: const TextStyle(color: Colors.red),
-            ),
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => BetterVideoPlayerBloc()
+        ..add(InitializeVideoPlayer(
+          videoUrl: videoUrl,
+          isLive: isLive,
+          aspectRatio: aspectRatio,
+          autoPlay: autoPlay,
+          fullScreenByDefault: fullScreenByDefault,
+        )),
+      child: BlocBuilder<BetterVideoPlayerBloc, BetterVideoPlayerState>(
+        builder: (context, state) {
+          return AspectRatio(
+            aspectRatio: aspectRatio,
+            child: _buildContent(state),
           );
         },
-      );
-
-      final dataSource = BetterPlayerDataSource(
-        BetterPlayerDataSourceType.network,
-        widget.videoUrl,
-        liveStream: widget.isLive,
-      );
-
-      _controller = BetterPlayerController(config);
-      await _controller.setupDataSource(dataSource);
-
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-        });
-      }
-    } catch (e) {
-      if (mounted) {
-        setState(() {
-          _isLoading = false;
-          _errorMessage = 'Failed to initialize video player: $e';
-        });
-      }
-    }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: widget.aspectRatio,
-      child: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : _errorMessage != null
-          ? Center(child: Text(_errorMessage!, style: const TextStyle(color: Colors.red)))
-          : BetterPlayer(controller: _controller),
+      ),
     );
+  }
+
+  Widget _buildContent(BetterVideoPlayerState state) {
+    if (state is VideoPlayerLoading) {
+      return const Center(child: CircularProgressIndicator());
+    } else if (state is VideoPlayerError) {
+      return Center(
+        child: Text(
+          state.errorMessage,
+          style: const TextStyle(color: Colors.red),
+        ),
+      );
+    } else if (state is VideoPlayerInitialized) {
+      return BetterPlayer(controller: state.controller);
+    } else {
+      return const Center(child: CircularProgressIndicator());
+    }
   }
 }

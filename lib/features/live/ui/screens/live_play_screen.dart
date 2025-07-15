@@ -39,8 +39,11 @@ class LivePlayScreen extends StatelessWidget {
                   //   ),
                   // ),
                   BetterVideoPlayer(
-                    videoUrl: "https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4", // or MP4
-                    isLive: false, // false for movies or highlights
+                    videoUrl: '''https://backend.cloud.micple.com/v/66653e209354dbdd713abcfa.mp4?t=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NjUzZTIwOTM1NGRiZGQ3MTNhYmNmYSIsInVpZCI6bnVsbCwiaWF0IjoxNzUyNTk3MzcxLCJleHAiOjE3NTM0NjEzNzF9.iAAkmsVUYestPPqu-V8ArsqmEf43LEqvJcJQUXbEFqc&userName=tuhinikbal_11278''',
+                    isLive: false,
+                    aspectRatio: 16 / 9,
+                    autoPlay: true,
+                    fullScreenByDefault: false,
                   ),
                   const SizedBox(
                     height: 6,
