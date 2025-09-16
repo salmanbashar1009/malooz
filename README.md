@@ -2,6 +2,8 @@
 
 Malooz Television is a live streaming mobile application designed for seamless viewing of live TV channels, on-demand content, and interactive features. Built with Flutter for cross-platform compatibility (iOS, Android, Linux, macOS), it provides an intuitive user experience with features like user authentication, personalized recommendations, notifications, and more.
 
+
+
 ## Table of Contents
 
 - [Features](#features)
@@ -24,6 +26,7 @@ Malooz Television is a live streaming mobile application designed for seamless v
 - **Privacy & Compliance:** Terms and conditions, privacy policy screens.
 - **Cross-Platform:** Runs on iOS, Android, Linux, and macOS.
 
+![malooz tv.png](assets/malooz%20tv.png)
 
 ## Installation
 
