@@ -3,16 +3,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:malooz/core/constant/app_images.dart';
 import 'package:malooz/features/common/common_widgets/section_header.dart';
 import '../../../common/common_bloc/search_bloc/search_bloc.dart';
-import '../../../common/common_bloc/search_bloc/search_event.dart';
 import '../../../common/common_bloc/search_bloc/search_state.dart';
 import '../../../common/common_widgets/build_horizontal_list.dart';
 import '../widgets/home_screen_banner.dart';
 import '../widgets/home_screen_header.dart';
 
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key});
+   const HomeScreen({super.key});
 
-  final FocusNode _focusNode = FocusNode();
+  // final FocusNode _focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {

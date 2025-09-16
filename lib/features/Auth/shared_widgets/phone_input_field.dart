@@ -39,7 +39,7 @@ class PhoneInputField extends StatelessWidget {
       ),
       initialCountryCode: 'BD',
       onChanged: (phone) {
-        print(phone.completeNumber);
+        // print(phone.completeNumber);
       },
     );
   }

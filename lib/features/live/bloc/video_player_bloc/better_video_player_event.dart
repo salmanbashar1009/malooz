@@ -30,3 +30,24 @@ class InitializeVideoPlayer extends BetterVideoPlayerEvent {
 class DisposeVideoPlayer extends BetterVideoPlayerEvent {
   const DisposeVideoPlayer();
 }
+
+class TogglePlayPause extends BetterVideoPlayerEvent {
+  const TogglePlayPause();
+}
+
+class ToggleFullScreen extends BetterVideoPlayerEvent {
+  const ToggleFullScreen();
+}
+
+class ToggleControlsVisibility extends BetterVideoPlayerEvent {
+  final bool showControls;
+
+  const ToggleControlsVisibility({required this.showControls});
+
+  @override
+  List<Object> get props => [showControls];
+}
+
+class UpdateVideoProgress extends BetterVideoPlayerEvent {
+  const UpdateVideoProgress();
+}

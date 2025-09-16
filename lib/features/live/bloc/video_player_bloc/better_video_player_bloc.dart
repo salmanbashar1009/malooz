@@ -1,4 +1,3 @@
-// BLoC
 import 'package:better_player_plus/better_player_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,10 +5,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'better_video_player_event.dart';
 import 'better_video_player_state.dart';
 
+// BLoC
 class BetterVideoPlayerBloc extends Bloc<BetterVideoPlayerEvent, BetterVideoPlayerState> {
   BetterVideoPlayerBloc() : super(VideoPlayerInitial()) {
     on<InitializeVideoPlayer>(_onInitializeVideoPlayer);
     on<DisposeVideoPlayer>(_onDisposeVideoPlayer);
+    on<TogglePlayPause>(_onTogglePlayPause);
+    on<ToggleFullScreen>(_onToggleFullScreen);
+    on<ToggleControlsVisibility>(_onToggleControlsVisibility);
+    on<UpdateVideoProgress>(_onUpdateVideoProgress);
   }
 
   Future<void> _onInitializeVideoPlayer(
@@ -25,15 +29,15 @@ class BetterVideoPlayerBloc extends Bloc<BetterVideoPlayerEvent, BetterVideoPlay
         fit: BoxFit.contain,
         allowedScreenSleep: false,
         fullScreenByDefault: event.fullScreenByDefault,
-        controlsConfiguration: BetterPlayerControlsConfiguration(
+        controlsConfiguration: const BetterPlayerControlsConfiguration(
           showControlsOnInitialize: false,
-          enableFullscreen: true,
-          enablePlayPause: true,
-          enableProgressBar: !event.isLive,
-          enableProgressText: !event.isLive,
-          enableSkips: !event.isLive,
-          enableMute: true,
-          enableOverflowMenu: true,
+          enableFullscreen: false, // We'll handle full-screen manually
+          enablePlayPause: false, // We'll handle play/pause manually
+          enableProgressBar: false, // We'll handle progress manually
+          enableProgressText: false,
+          enableSkips: false,
+          enableMute: false,
+          enableOverflowMenu: false,
         ),
         errorBuilder: (context, errorMessage) {
           return Center(
@@ -54,7 +58,16 @@ class BetterVideoPlayerBloc extends Bloc<BetterVideoPlayerEvent, BetterVideoPlay
       final controller = BetterPlayerController(config);
       await controller.setupDataSource(dataSource);
 
-      emit(VideoPlayerInitialized(controller: controller));
+      // Listen to video progress
+      controller.addEventsListener((event) {
+        add(const UpdateVideoProgress());
+      });
+
+      emit(VideoPlayerInitialized(
+        controller: controller,
+        isPlaying: event.autoPlay,
+        isFullScreen: event.fullScreenByDefault,
+      ));
     } catch (e) {
       emit(VideoPlayerError(errorMessage: 'Failed to initialize video player: $e'));
     }
@@ -69,5 +82,62 @@ class BetterVideoPlayerBloc extends Bloc<BetterVideoPlayerEvent, BetterVideoPlay
       controller.dispose();
     }
     emit(VideoPlayerInitial());
+  }
+
+  void _onTogglePlayPause(
+      TogglePlayPause event,
+      Emitter<BetterVideoPlayerState> emit,
+      ) {
+    if (state is VideoPlayerInitialized) {
+      final currentState = state as VideoPlayerInitialized;
+      final controller = currentState.controller;
+      if (currentState.isPlaying) {
+        controller.pause();
+      } else {
+        controller.play();
+      }
+      emit(currentState.copyWith(isPlaying: !currentState.isPlaying));
+    }
+  }
+
+  void _onToggleFullScreen(
+      ToggleFullScreen event,
+      Emitter<BetterVideoPlayerState> emit,
+      ) {
+    if (state is VideoPlayerInitialized) {
+      final currentState = state as VideoPlayerInitialized;
+      final controller = currentState.controller;
+      if (currentState.isFullScreen) {
+        controller.exitFullScreen();
+      } else {
+        controller.enterFullScreen();
+      }
+      emit(currentState.copyWith(isFullScreen: !currentState.isFullScreen));
+    }
+  }
+
+  void _onToggleControlsVisibility(
+      ToggleControlsVisibility event,
+      Emitter<BetterVideoPlayerState> emit,
+      ) {
+    if (state is VideoPlayerInitialized) {
+      final currentState = state as VideoPlayerInitialized;
+      emit(currentState.copyWith(showControls: event.showControls));
+    }
+  }
+
+  void _onUpdateVideoProgress(
+      UpdateVideoProgress event,
+      Emitter<BetterVideoPlayerState> emit,
+      ) {
+    if (state is VideoPlayerInitialized) {
+      final currentState = state as VideoPlayerInitialized;
+      final controller = currentState.controller;
+      emit(currentState.copyWith(
+        currentPosition: controller.videoPlayerController?.value.position,
+        totalDuration: controller.videoPlayerController?.value.duration,
+        isPlaying: controller.isPlaying() ?? false,
+      ));
+    }
   }
 }
